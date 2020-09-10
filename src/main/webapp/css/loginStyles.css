@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('https://images.pexels.com/photos/1053687/pexels-photo-1053687.jpeg?cs=srgb&dl=pexels-marko-blazevic-1053687.jpg&fm=jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.row {
+  background: white;
+  border-radius: 40px;
+  box-shadow: 10px 10px 20px gray;
+}
+
+img {
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.login-btn {
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: black;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.login-btn:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.Login-Page {
+  margin-top: 10vh;
+}
