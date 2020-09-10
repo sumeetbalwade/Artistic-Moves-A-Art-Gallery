@@ -48,7 +48,7 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="Customer"
+                      name="userType"
                       value="customer"
                       id="Customer"
                       checked
@@ -63,7 +63,7 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="Admin"
+                      name="userType"
                       value="admin"
                       id="Admin"
                     />
