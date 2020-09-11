@@ -1,9 +1,9 @@
 package com.ArtisticMoves.model;
 
 public class User {
-    private String firstName,lastName,email,contactNumber,password,userType;
+    private String firstName, lastName, email, contactNumber, password, userType;
     private int id;
-    private String address,pinCode,city,state;
+    private String address, pinCode, city, state;
 
     public String getUserType() {
         return userType;
@@ -92,5 +92,23 @@ public class User {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", password='" + password + '\'' +
+                ", userType='" + userType + '\'' +
+                ", id=" + id +
+                ", address='" + address + '\'' +
+                ", pinCode='" + pinCode + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                '}';
     }
 }
