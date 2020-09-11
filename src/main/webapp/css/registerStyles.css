@@ -1,5 +1,5 @@
-*{
-    padding : 0;
+* {
+    padding: 0;
     margin: 0;
 }
 
@@ -17,12 +17,12 @@ body {
 }
 
 
-div.row{
-    padding : 100px 50px;
+div.row {
+    padding: 100px 50px;
 }
 
 
-#registrationForm{
+#registrationForm {
 
     background-color: white;
     padding: 50px;
@@ -30,7 +30,7 @@ div.row{
 }
 
 .col-lg-9 {
-    border-radius:  40px 0 0 40px;
+    border-radius: 40px 0 0 40px;
     -ms-flex: 0 0 70%;
     flex: 0 0 70%;
     max-width: 60%;
@@ -43,7 +43,7 @@ div.row{
 }
 
 
-#homeButton{
+#homeButton {
     background-image: url("https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?cs=srgb&dl=pexels-steve-johnson-1585325.jpg&fm=jpg");
     background-size: cover;
     background-position: center;
@@ -52,18 +52,21 @@ div.row{
     padding-left: 10%;
     padding-right: 10%;
 }
-form h1{
+
+form h1 {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-form h3{
+
+form h3 {
     padding-top: 30px;
 }
 
-div .row{
+div .row {
     padding: 10px 10px;
 }
-.btn{
+
+.btn {
     width: 200px;
     background-color: black;
 }

@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 
 @WebServlet(name = "Login")
 public class Login extends HttpServlet {
@@ -25,30 +24,30 @@ public class Login extends HttpServlet {
         String password = request.getParameter("password");
         String userType = request.getParameter("userType");
 
-        try{
+        try {
             UserDAO ud = new UserDAO();
 
             User user = ud.getUser(emailAddress);
-            if (user!=null){
+            if (user != null) {
 
                 String userTypeDB = user.getUserType();
                 String passwordDB = user.getPassword();
 
-                if (userTypeDB.equals(userType) && passwordDB.equals(password)){
+                if (userTypeDB.equals(userType) && passwordDB.equals(password)) {
                     HttpSession session = request.getSession();
-                    session.setAttribute("user",user);
+                    session.setAttribute("user", user);
                     RequestDispatcher rd = request.getRequestDispatcher("test.jsp");
-                    rd.forward(request,response);
-                }else {
+                    rd.forward(request, response);
+                } else {
                     response.sendRedirect("Login.jsp");
 
                 }
 
-            }else {
+            } else {
                 response.sendRedirect("Login.jsp");
 
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

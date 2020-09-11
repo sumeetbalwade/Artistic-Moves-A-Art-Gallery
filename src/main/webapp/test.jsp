@@ -11,10 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>hello world</h1>
-    <%
-        User user = (User)session.getAttribute("user");
-        out.println(user);
-    %>
+<h1>hello world</h1>
+<%
+    User user = (User) session.getAttribute("user");
+    out.println(user);
+%>
 </body>
 </html>

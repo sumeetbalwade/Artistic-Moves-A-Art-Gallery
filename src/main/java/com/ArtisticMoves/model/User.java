@@ -1,9 +1,9 @@
 package com.ArtisticMoves.model;
 
 public class User {
-    private String firstName,lastName,email,contactNumber,password,userType;
+    private String firstName, lastName, email, contactNumber, password, userType;
     private int id;
-    private String address,pinCode,city,state;
+    private String address, pinCode, city, state;
 
     public String getUserType() {
         return userType;
