@@ -1,7 +1,7 @@
 package com.ArtisticMoves.model;
 
-public class RegisterModel {
-    private String firstName,lastName,email,contactNumber,password,confPassword;
+public class User {
+    private String firstName,lastName,email,contactNumber,password;
     private String address,pinCode,city,state;
 
     public String getFirstName() {
@@ -44,13 +44,6 @@ public class RegisterModel {
         this.password = password;
     }
 
-    public String getConfPassword() {
-        return confPassword;
-    }
-
-    public void setConfPassword(String confPassword) {
-        this.confPassword = confPassword;
-    }
 
     public String getAddress() {
         return address;

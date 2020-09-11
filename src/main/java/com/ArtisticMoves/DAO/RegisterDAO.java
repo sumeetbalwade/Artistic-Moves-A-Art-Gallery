@@ -1,12 +1,12 @@
 package com.ArtisticMoves.DAO;
 
-import com.ArtisticMoves.model.RegisterModel;
+import com.ArtisticMoves.model.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class User {
-    public static void AddRegisterDetail(RegisterModel rm){
+public class RegisterDAO {
+    public static void AddRegisterDetail(User rm){
         int status = 0;
         try{
             Class.forName("com.mysql.jdbc.Driver");

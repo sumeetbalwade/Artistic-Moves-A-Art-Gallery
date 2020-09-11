@@ -1,6 +1,6 @@
 package com.ArtisticMoves;
 
-import com.ArtisticMoves.model.RegisterModel;
+import com.ArtisticMoves.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,17 +15,19 @@ public class ServletRegister extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String contactNumber = request.getParameter("contactNumber");
         String password = request.getParameter("password");
+        String confPassword = request.getParameter("confPassword");
         String address = request.getParameter("address");
         String pinCode = request.getParameter("pinCode");
         String city = request.getParameter("city");
         String state = request.getParameter("state");
 
-        RegisterModel model = new RegisterModel();
+        User model = new User();
         model.setFirstName(firstName);
         model.setLastName(lastName);
         model.setEmail(email);
