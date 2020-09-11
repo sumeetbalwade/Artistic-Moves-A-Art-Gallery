@@ -15,7 +15,7 @@ public class UserDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://remotemysql.com/4eS1tiqRbr", "4eS1tiqRbr", "rNXd5pqbwk");
-            PreparedStatement ps = con.prepareStatement("select * from users where email=?");
+            PreparedStatement ps = con.prepareStatement("select * from users where email=?;");
             ps.setString(1,email);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
@@ -33,11 +33,11 @@ public class UserDAO {
     //method to insert user
     public int insertUser(User user){
         int status = 0;
-       
+
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://remotemysql.com/4eS1tiqRbr", "4eS1tiqRbr", "rNXd5pqbwk");
-            PreparedStatement ps = con.prepareStatement("insert into users values (null,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("insert into users values (null,?,?,?,?,?,?,?,?,?,?);");
             ps.setString(1,user.getUserType());
             ps.setString(2,user.getFirstName());
             ps.setString(3, user.getLastName());
