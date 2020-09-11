@@ -21,7 +21,7 @@
           <div class="col-lg-7 px-5 pt-5 my-4">
             <h1 class="font-weight-bold mb-4">Artistic Moves</h1>
             <h4>Sign into your account</h4>
-            <form action="">
+            <form action="/Login" method="get">
               <div class="form-row">
                 <div class="col-lg-7">
                   <input
