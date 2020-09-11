@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="email" class="form-control" placeholder="Email*" name="emali">
+                    <input type="email" class="form-control" placeholder="Email*" name="email">
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Contact Number*" name="contactNumber">
@@ -56,7 +56,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Pincode*" name="pincode">
+                    <input type="text" class="form-control" placeholder="Pincode*" name="pinCode">
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" placeholder="State*" name="state">
