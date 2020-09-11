@@ -21,7 +21,7 @@
           <div class="col-lg-7 px-5 pt-5 my-4">
             <h1 class="font-weight-bold mb-4">Artistic Moves</h1>
             <h4>Sign into your account</h4>
-            <form action="/Login" method="get">
+            <form action="Login" method="post">
               <div class="form-row">
                 <div class="col-lg-7">
                   <input
@@ -87,7 +87,7 @@
           </div>
           <div class="col-lg-5">
             <img
-              src="https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?cs=srgb&dl=pexels-steve-johnson-1585325.jpg&fm=jpg"
+              src="https://images.pexels.com/photos/2505693/pexels-photo-2505693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               height="1920"
               width="1080"
               class="img-fluid"

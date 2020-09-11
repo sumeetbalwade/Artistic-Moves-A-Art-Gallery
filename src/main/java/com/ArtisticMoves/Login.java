@@ -12,10 +12,6 @@ import java.io.PrintWriter;
 public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         String emailAddress = request.getParameter("emailAddress");
         String password = request.getParameter("password");
@@ -25,5 +21,9 @@ public class Login extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println(emailAddress + password + userType);
         out.println("Hello");
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 }
