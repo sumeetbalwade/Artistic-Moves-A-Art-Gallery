@@ -11,18 +11,6 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-<!--    Example of how to add servlet you can use it for reference -->
-    <servlet>
-        <description></description>
-        <display-name>Servlet</display-name>
-        <servlet-name>Servlet</servlet-name>
-        <servlet-class>com.ArtisticMoves.Servlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Servlet</servlet-name>
-        <url-pattern>/Servlet</url-pattern>
-    </servlet-mapping>
-
 <!--    Login Servlet-->
     <servlet>
         <description></description>

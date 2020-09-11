@@ -10,7 +10,9 @@ import java.sql.ResultSet;
 public class UserDAO {
 
     //method to get user
-    public ResultSet getUser(String email) {
+    public User getUser(String email) {
+
+        User user = new User();
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -18,16 +20,29 @@ public class UserDAO {
             PreparedStatement ps = con.prepareStatement("select * from users where email=?;");
             ps.setString(1,email);
             ResultSet rs = ps.executeQuery();
+
+
+
             if(rs.next()){
-                return rs;
+                user.setId(rs.getInt("id"));
+                user.setUserType(rs.getString("userType"));
+                user.setFirstName(rs.getString("firstName"));
+                user.setLastName(rs.getString("lastName"));
+                user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
+                user.setContactNumber(rs.getString("contactNumber"));
+                user.setAddress(rs.getString("address"));
+                user.setCity(rs.getString("city"));
+                user.setState(rs.getString("state"));
+                user.setPinCode(rs.getString("pincode"));
+                 return user;
             }
 
         }
         catch (Exception e){
             System.out.println(e);
         }
-
-        return null;
+        return  null;
     }
 
     //method to insert user

@@ -93,4 +93,22 @@ public class User {
     public void setState(String state) {
         this.state = state;
     }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", password='" + password + '\'' +
+                ", userType='" + userType + '\'' +
+                ", id=" + id +
+                ", address='" + address + '\'' +
+                ", pinCode='" + pinCode + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }
