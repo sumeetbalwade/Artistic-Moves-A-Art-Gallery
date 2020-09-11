@@ -5,7 +5,7 @@ import com.ArtisticMoves.model.RegisterModel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class RegisterDAO {
+public class User {
     public static void AddRegisterDetail(RegisterModel rm){
         int status = 0;
         try{

@@ -20,7 +20,6 @@ public class ServletRegister extends HttpServlet {
         String email = request.getParameter("email");
         String contactNumber = request.getParameter("contactNumber");
         String password = request.getParameter("password");
-        String confPassword = request.getParameter("confPassword");
         String address = request.getParameter("address");
         String pinCode = request.getParameter("pinCode");
         String city = request.getParameter("city");
@@ -32,7 +31,6 @@ public class ServletRegister extends HttpServlet {
         model.setEmail(email);
         model.setContactNumber(contactNumber);
         model.setPassword(password);
-        model.setConfPassword(confPassword);
         model.setAddress(address);
         model.setPinCode(pinCode);
         model.setCity(city);
