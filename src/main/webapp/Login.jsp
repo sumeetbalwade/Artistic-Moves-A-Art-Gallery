@@ -98,6 +98,54 @@
     </div>
 </section>
 
+
+
+<script type="text/javascript">
+
+    function checkForm(form)
+    {
+        if(form.emailAddress.value == "") {
+            alert("Error: Email cannot be blank!");
+            form.emailAddress.focus();
+            return false;
+        }
+
+
+        if(form.password.value != "") {
+            if(form.password.value.length < 6) {
+                alert("Error: Password must contain at least six characters!");
+                form.password.focus();
+                return false;
+            }
+            if(form.password.value == form.emailAddress.value) {
+                alert("Error: Password must be different from Username!");
+                form.password.focus();
+                return false;
+            }
+            re = /[0-9]/;
+            if(!re.test(form.password.value)) {
+                alert("Error: password must contain at least one number (0-9)!");
+                form.password.focus();
+                return false;
+            }
+            re = /[a-z]/;
+            if(!re.test(form.password.value)) {
+                alert("Error: password must contain at least one lowercase letter (a-z)!");
+                form.password.focus();
+                return false;
+            }
+            re = /[A-Z]/;
+            if(!re.test(form.password.value)) {
+                alert("Error: password must contain at least one uppercase letter (A-Z)!");
+                form.password.focus();
+                return false;
+            }
+        }
+        return true;
+    }
+
+</script>
+
 <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
