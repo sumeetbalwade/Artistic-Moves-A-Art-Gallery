@@ -19,7 +19,7 @@
 <section class="ContactUs-page mx-5">
     <div class="container">
 
-        <div class="row no-gutters">
+        <div class="row">
             <div class="col-lg-7 px-5 pt-5 my-4">
                 <h1 class="font-weight-bold mb-4">Artistic Moves</h1>
                 <h3>Contact Us</h3>
@@ -48,12 +48,12 @@
                     </div>
                     <div class="form-row">
                         <div class="col-lg-10">
-                                <textarea
-                                        type="Name"
-                                        placeholder="Message"
-                                        class="form-control my-3 p-4"
-                                        name="message"
-                                ></textarea>
+                                    <textarea
+                                            type="Name"
+                                            placeholder="Message"
+                                            class="form-control my-3 p-4"
+                                            name="message"
+                                    ></textarea>
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <button type="submit" class="btn mt-3 mb-5">
+                            <button type="submit" class="btn btn-dark mt-3 mb-5">
                                 Submit
                             </button>
                         </div>
@@ -72,15 +72,20 @@
             <div class="col-lg-5 side-menu" >
                 <div class="form-row">
                     <div class="col-lg-7">
-                        <a class="btn side-btn home-btn" href="index.jsp" role="button">
+                        <a class="btn btn-dark side-btn" href="index.jsp" role="button">
                             Home
                         </a>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-lg-7">
-                        <a class="btn side-btn mt-5" href="Login.jsp" role="button">
+                        <a class="btn btn-dark side-btn" href="Login.jsp" role="button">
                             LogIn
+                        </a>
+                    </div>
+                    <div class="col-lg-7">
+                        <a class="btn btn-dark side-btn" href="Register.jsp" role="button">
+                            Register
                         </a>
                     </div>
                 </div>
