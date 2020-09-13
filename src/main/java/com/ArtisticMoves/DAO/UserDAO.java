@@ -70,5 +70,33 @@ public class UserDAO {
         return status;
     }
 
+    public int editUserProfile(User user){
+        int status = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection
+                    ("jdbc:mysql://remotemysql.com/4eS1tiqRbr", "4eS1tiqRbr", "rNXd5pqbwk");
+            PreparedStatement ps = con.prepareStatement
+                    ("update users set firstName= ?,lastName = ?,email = ?,contactNumber = ? ,address = ? ,city = ?,state = ?,pincode = ? where id = ?");
+            ps.setString(1, user.getFirstName());
+            ps.setString(2, user.getLastName());
+            ps.setString(3, user.getEmail());
+            ps.setString(4, user.getContactNumber());
+            ps.setString(5, user.getAddress());
+            ps.setString(6, user.getCity());
+            ps.setString(7, user.getState());
+            ps.setString(8, user.getPinCode());
+            ps.setInt(9, user.getId());
+
+            status = ps.executeUpdate();
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return status;
+
+    }
 
 }
+
+
