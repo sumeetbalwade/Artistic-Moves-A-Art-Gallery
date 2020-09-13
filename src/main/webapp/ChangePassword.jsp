@@ -5,14 +5,23 @@
   Time: 02:51 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" session="true" import="com.ArtisticMoves.model.User" %>
 <html>
 <head>
     <title>Change Password</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/ChangePasswordStyles.css">
 </head>
 <body>
+
+<%
+    if (session.getAttribute("user") == null) {
+        response.sendRedirect("Login.jsp");
+    } else {
+        User user = (User) session.getAttribute("user");
+%>
+
 <section class="ContactUs-page mx-5">
     <div class="container">
 
@@ -22,7 +31,7 @@
                 <h3>Change Password</h3>
 
                 <!-- form action -->
-                <form action="" method="post">
+                <form action="ChangePasswordServlet" method="post">
                     <div class="form-row">
                         <div class="col-lg-10">
                             <input
@@ -55,7 +64,6 @@
                     </div>
 
 
-
                     <div class="form-row">
                         <div class="col-lg-7">
                             <button type="submit" class="btn btn-dark mt-3 mb-5">
@@ -66,7 +74,7 @@
 
                 </form>
             </div>
-            <div class="col-lg-5 side-menu" >
+            <div class="col-lg-5 side-menu">
                 <div class="form-row">
                     <div class="col-lg-7">
                         <a class="btn btn-dark my-3 side-btn" href="index.jsp" role="button">
@@ -76,7 +84,7 @@
                 </div>
                 <div class="form-row">
                     <div class="col-lg-7">
-                        <a class="btn btn-dark my-3 side-btn" href="#" role="button">
+                        <a class="btn btn-dark my-3 side-btn" href="userProfile.jsp" role="button">
                             Profile
                         </a>
                     </div>
@@ -85,6 +93,7 @@
         </div>
     </div>
 </section>
+<% }%>
 
 </body>
 </html>

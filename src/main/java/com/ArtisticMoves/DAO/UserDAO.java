@@ -34,8 +34,10 @@ public class UserDAO {
                 user.setCity(rs.getString("city"));
                 user.setState(rs.getString("state"));
                 user.setPinCode(rs.getString("pincode"));
+                con.close();
                 return user;
             }
+            con.close();
 
         } catch (Exception e) {
             System.out.println(e);
@@ -63,10 +65,13 @@ public class UserDAO {
             ps.setString(10, user.getPinCode());
 
             status = ps.executeUpdate();
+            con.close();
+
 
         } catch (Exception e) {
             System.out.println(e);
         }
+
         return status;
     }
 
@@ -88,6 +93,28 @@ public class UserDAO {
             ps.setInt(9, user.getId());
 
             status = ps.executeUpdate();
+            con.close();
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return status;
+
+    }
+
+    public static int changeUserPasswordDAO(User user, String newPassword) {
+        int status = 0;
+        try {
+            Class.forName(Database.driver);
+            Connection con = DriverManager.getConnection
+                    (Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("update users set password=? where id = ?");
+            ps.setString(1, newPassword);
+            ps.setInt(2, user.getId());
+            status = ps.executeUpdate();
+            con.close();
+
 
         } catch (Exception e) {
             System.out.println(e);
