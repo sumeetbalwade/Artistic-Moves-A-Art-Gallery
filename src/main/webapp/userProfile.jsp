@@ -38,7 +38,7 @@
                 <div class="profile-section">
                     <div class="sidebar">
 
-                        <a href="#">
+                        <a href="index.jsp">
                             <div class="sidebar-card">
                                 <i class="fas fa-home"></i>Home
                             </div>
