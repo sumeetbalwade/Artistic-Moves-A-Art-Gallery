@@ -58,7 +58,7 @@
                                 <i class="fas fa-key"></i>Change Password
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="LogOutServlet">
                             <div class="sidebar-card">
                                 <i class="fas fa-sign-out-alt"></i></i>Log Out
                             </div>
