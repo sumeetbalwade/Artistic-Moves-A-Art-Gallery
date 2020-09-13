@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
@@ -50,8 +51,16 @@ public class Login extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession s = request.getSession(false);
+        if (s.getAttribute("user") != null) {
+            response.sendRedirect("userProfile.jsp");
+        } else {
+            response.sendRedirect("Login.jsp");
+        }
     }
 }
