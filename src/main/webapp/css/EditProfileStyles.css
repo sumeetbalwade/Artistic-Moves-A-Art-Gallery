@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-image: url('https://images.pexels.com/photos/1053687/pexels-photo-1053687.jpeg?cs=srgb&dl=pexels-marko-blazevic-1053687.jpg&fm=jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+div.row {
+    padding: 100px 200px;
+}
+
+
+#registrationForm {
+    border-radius:  40px 0 0 40px;
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+
+#homeButton {
+    background-image: url("https://images.pexels.com/photos/1762973/pexels-photo-1762973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0 40px 40px 0;
+    padding-top: 270px;
+    padding-left: 14%;
+    padding-right: 14%;
+}
+
+form h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+form h3 {
+    padding-top: 30px;
+}
+
+div .row {
+    padding: 10px 10px;
+}
+
+.btn {
+    width: 200px;
+    background-color: black;
+}

@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
@@ -25,9 +26,8 @@ public class Login extends HttpServlet {
         String userType = request.getParameter("userType");
 
         try {
-            UserDAO ud = new UserDAO();
 
-            User user = ud.getUser(emailAddress);
+            User user = UserDAO.getUser(emailAddress);
             if (user != null) {
 
                 String userTypeDB = user.getUserType();
@@ -50,8 +50,16 @@ public class Login extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession s = request.getSession(false);
+        if (s.getAttribute("user") != null) {
+            response.sendRedirect("userProfile.jsp");
+        } else {
+            response.sendRedirect("Login.jsp");
+        }
     }
 }

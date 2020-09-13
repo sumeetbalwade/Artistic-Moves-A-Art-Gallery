@@ -10,12 +10,12 @@ import java.sql.ResultSet;
 public class UserDAO {
 
     //method to get user
-    public User getUser(String email) {
+    public static User getUser(String email) {
 
         User user = new User();
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("select * from users where email=?;");
             ps.setString(1, email);
@@ -44,7 +44,7 @@ public class UserDAO {
     }
 
     //method to insert user
-    public int insertUser(User user) {
+    public static int insertUser(User user) {
         int status = 0;
 
         try {
@@ -70,5 +70,32 @@ public class UserDAO {
         return status;
     }
 
+    public static int editUserProfile(User user) {
+        int status = 0;
+        try {
+            Class.forName(Database.driver);
+            Connection con = DriverManager.getConnection
+                    (Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("update users set firstName= ?,lastName = ?,email = ?,contactNumber = ? ,address = ? ,city = ?,state = ?,pincode = ? where id = ?");
+            ps.setString(1, user.getFirstName());
+            ps.setString(2, user.getLastName());
+            ps.setString(3, user.getEmail());
+            ps.setString(4, user.getContactNumber());
+            ps.setString(5, user.getAddress());
+            ps.setString(6, user.getCity());
+            ps.setString(7, user.getState());
+            ps.setString(8, user.getPinCode());
+            ps.setInt(9, user.getId());
+
+            status = ps.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return status;
+
+    }
 
 }
+
+
