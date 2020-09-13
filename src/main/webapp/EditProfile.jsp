@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.ArtisticMoves.model.User" %><%--
   Created by IntelliJ IDEA.
   User: Sagar
   Date: 13-09-2020
@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/EditProfileStyles.css">
 </head>
 <body>
+<%
+    if (session.getAttribute("user") == null) {
+        response.sendRedirect("Login.jsp");
+    } else {
+        User user = (User) session.getAttribute("user");
+%>
 <div class="row">
     <div id="registrationForm" class="col-lg-7">
         <h1>Edit Profile</h1>
@@ -21,36 +27,36 @@
             <h3>Personal Detail</h3>
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" name="firstName">
+                    <input type="text" class="form-control" name="firstName" value="<%=user.getFirstName()%>">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" name="lastName">
+                    <input type="text" class="form-control" name="lastName" value="<%=user.getLastName()%>">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="email" class="form-control" name="emali">
+                    <input type="email" class="form-control" name="email" value="<%=user.getEmail()%>">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" name="contactNumber">
+                    <input type="text" class="form-control" name="contactNumber" value="<%=user.getContactNumber()%>">
                 </div>
             </div>
 
             <h3>Address Detail</h3>
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" name="address">
+                    <input type="text" class="form-control" name="address" value="<%=user.getAddress()%>">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" name="city">
+                    <input type="text" class="form-control" name="city" value="<%=user.getCity()%>">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" name="pincode">
+                    <input type="text" class="form-control" name="pincode" value="<%=user.getPinCode()%>">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" name="state">
+                    <input type="text" class="form-control" name="state" value="<%=user.getState()%>">
                 </div>
             </div>
             <div class="row">
@@ -60,6 +66,7 @@
             </div>
         </form>
     </div>
+    <% }%>
 
     <div id="homeButton" class="col-lg-5 text-center">
         <div class="row">
