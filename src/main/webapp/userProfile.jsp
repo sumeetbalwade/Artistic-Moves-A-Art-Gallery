@@ -43,7 +43,7 @@
                                 <i class="fas fa-home"></i>Home
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="EditProfile.jsp">
                             <div class="sidebar-card">
                                 <i class="fas fa-user-edit"></i>Edit Profile
                             </div>

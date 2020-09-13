@@ -34,4 +34,15 @@
         <servlet-name>ServletRegister</servlet-name>
         <url-pattern>/ServletRegister</url-pattern>
     </servlet-mapping>
+    <!--    EditUserProfile Servlet-->
+    <servlet>
+        <description></description>
+        <display-name>EditUserProfileServlet</display-name>
+        <servlet-name>EditUserProfileServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.EditUserProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditUserProfileServlet</servlet-name>
+        <url-pattern>/EditUserProfile</url-pattern>
+    </servlet-mapping>
 </web-app>
