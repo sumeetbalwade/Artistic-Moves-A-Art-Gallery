@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 public class UserDAO {
 
     //method to get user
-    public User getUser(String email) {
+    public static User getUser(String email) {
 
         User user = new User();
 
@@ -44,7 +44,7 @@ public class UserDAO {
     }
 
     //method to insert user
-    public int insertUser(User user) {
+    public static int insertUser(User user) {
         int status = 0;
 
         try {
@@ -70,7 +70,7 @@ public class UserDAO {
         return status;
     }
 
-    public int editUserProfile(User user) {
+    public static int editUserProfile(User user) {
         int status = 0;
         try {
             Class.forName(Database.driver);

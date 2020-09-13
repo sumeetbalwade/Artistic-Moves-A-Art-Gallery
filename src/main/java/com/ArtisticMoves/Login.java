@@ -26,9 +26,8 @@ public class Login extends HttpServlet {
         String userType = request.getParameter("userType");
 
         try {
-            UserDAO ud = new UserDAO();
 
-            User user = ud.getUser(emailAddress);
+            User user = UserDAO.getUser(emailAddress);
             if (user != null) {
 
                 String userTypeDB = user.getUserType();
