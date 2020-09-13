@@ -23,7 +23,7 @@
 <div class="row">
     <div id="registrationForm" class="col-lg-7">
         <h1>Edit Profile</h1>
-        <form action="EditUserProfileServlet" method="post">
+        <form action="EditUserProfile" method="post">
             <h3>Personal Detail</h3>
             <div class="row">
                 <div class="col">
@@ -53,7 +53,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" name="pincode" value="<%=user.getPinCode()%>">
+                    <input type="text" class="form-control" name="pinCode" value="<%=user.getPinCode()%>">
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" name="state" value="<%=user.getState()%>">
@@ -66,18 +66,18 @@
             </div>
         </form>
     </div>
-    <% }%>
 
     <div id="homeButton" class="col-lg-5 text-center">
         <div class="row">
             <a href="index.jsp" class="btn btn-dark">Home</a>
         </div>
         <div class="row">
-            <a href="" class="btn btn-dark">Profile</a>
+            <a href="userProfile.jsp" class="btn btn-dark">Profile</a>
         </div>
     </div>
 </div>
 
+<% }%>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

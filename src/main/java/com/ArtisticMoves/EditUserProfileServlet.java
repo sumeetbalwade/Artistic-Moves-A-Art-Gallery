@@ -1,5 +1,6 @@
 package com.ArtisticMoves;
 
+import com.ArtisticMoves.DAO.UserDAO;
 import com.ArtisticMoves.model.User;
 
 import javax.servlet.ServletException;
@@ -15,8 +16,11 @@ import java.io.PrintWriter;
 public class EditUserProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession(false);
+        User updatedUser = (User) session.getAttribute("user");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+        int status = 0;
 
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -37,6 +41,25 @@ public class EditUserProfileServlet extends HttpServlet {
         model.setPinCode(pinCode);
         model.setCity(city);
         model.setState(state);
+        model.setId(updatedUser.getId());
+
+
+        status = UserDAO.editUserProfile(model);
+
+        if (status == 0) {
+            response.sendRedirect("EditProfile.jsp");
+        } else {
+            updatedUser.setFirstName(firstName);
+            updatedUser.setLastName(lastName);
+            updatedUser.setEmail(email);
+            updatedUser.setContactNumber(contactNumber);
+            updatedUser.setAddress(address);
+            updatedUser.setPinCode(pinCode);
+            updatedUser.setCity(city);
+            updatedUser.setState(state);
+            response.sendRedirect("userProfile.jsp");
+
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
