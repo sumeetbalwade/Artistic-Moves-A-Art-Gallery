@@ -53,7 +53,7 @@
                                 <i class="fas fa-gifts"></i>Add Product
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="ChangePassword.jsp">
                             <div class="sidebar-card">
                                 <i class="fas fa-key"></i>Change Password
                             </div>

@@ -45,4 +45,16 @@
         <servlet-name>EditUserProfileServlet</servlet-name>
         <url-pattern>/EditUserProfile</url-pattern>
     </servlet-mapping>
+
+    <!--    ChangePasswordServlet Servlet-->
+    <servlet>
+        <description></description>
+        <display-name>ChangePasswordServlet</display-name>
+        <servlet-name>ChangePasswordServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.ChangePasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangePasswordServlet</servlet-name>
+        <url-pattern>/ChangePasswordServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
