@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
                 if (userTypeDB.equals(userType) && passwordDB.equals(password)) {
                     HttpSession session = request.getSession();
                     session.setAttribute("user", user);
-                    RequestDispatcher rd = request.getRequestDispatcher("test.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("userProfile.jsp");
                     rd.forward(request, response);
                 } else {
                     response.sendRedirect("Login.jsp");

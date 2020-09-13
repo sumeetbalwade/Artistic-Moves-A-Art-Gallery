@@ -1,11 +1,11 @@
-<%--
+<%@ page import="com.ArtisticMoves.model.User" %><%--
   Created by IntelliJ IDEA.
   User: sumee
   Date: 13-09-2020
   Time: 10:04 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  session="true" import="com.ArtisticMoves.model.User" %>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -23,6 +23,14 @@
     <title>Profile</title>
 </head>
 <body>
+
+<%
+    if (session.getAttribute("user") == null){
+        response.sendRedirect("Login.jsp");
+    }else {
+    User user = (User) session.getAttribute("user");
+%>
+
 <section class="Login-Page mx-5">
     <div class="container">
         <div class="row no-gutters row-main">
@@ -63,20 +71,20 @@
                 <div class="profile-section">
                     <div class="profile-card">
                         <img
-                                src="https://avatars2.githubusercontent.com/u/41995680?s=400&u=5b7ef73a4be433a2dc651fcb44865681954b90fd&v=4"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png"
                                 class="img-fluid profile-image" alt="Profile-Image" />
-                        <h1>Sumeet Balwade</h1>
+                        <h1><%=user.getFirstName()%> <%=user.getLastName()%></h1>
                         <div class="row mt-3">
                             <div class="col-lg-6 px-3">
                                 <h6>Email</h6>
-                                <p>balwadesr@gmail.com</p>
+                                <p><%=user.getEmail()%></p>
                                 <h6>Contact Number</h6>
-                                <p>+91 8888987679</p>
+                                <p>+91 <%=user.getContactNumber()%></p>
 
                             </div>
                             <div class="col-lg-6 px-3">
                                 <h6>Address</h6>
-                                <h4 class="address-para">H-701 Sukhwani Palms Wagholi Pune - 412207</p>
+                                <h4 class="address-para"><%=user.getAddress()%> - <%=user.getCity()%> <%=user.getPinCode()%></h4>
                             </div>
                         </div>
                     </div>
@@ -85,6 +93,8 @@
         </div>
     </div>
 </section>
+
+<% }%>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
