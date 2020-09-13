@@ -15,7 +15,7 @@ public class UserDAO {
         User user = new User();
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("select * from users where email=?;");
             ps.setString(1, email);
@@ -70,14 +70,13 @@ public class UserDAO {
         return status;
     }
 
-    public int editUserProfile(User user){
+    public int editUserProfile(User user) {
         int status = 0;
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
+        try {
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection
-                    ("jdbc:mysql://remotemysql.com/4eS1tiqRbr", "4eS1tiqRbr", "rNXd5pqbwk");
-            PreparedStatement ps = con.prepareStatement
-                    ("update users set firstName= ?,lastName = ?,email = ?,contactNumber = ? ,address = ? ,city = ?,state = ?,pincode = ? where id = ?");
+                    (Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("update users set firstName= ?,lastName = ?,email = ?,contactNumber = ? ,address = ? ,city = ?,state = ?,pincode = ? where id = ?");
             ps.setString(1, user.getFirstName());
             ps.setString(2, user.getLastName());
             ps.setString(3, user.getEmail());
@@ -90,7 +89,7 @@ public class UserDAO {
 
             status = ps.executeUpdate();
 
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return status;

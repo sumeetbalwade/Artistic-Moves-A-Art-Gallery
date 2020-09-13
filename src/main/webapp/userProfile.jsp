@@ -5,30 +5,30 @@
   Time: 10:04 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  session="true" import="com.ArtisticMoves.model.User" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" session="true" import="com.ArtisticMoves.model.User" %>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-          crossorigin="anonymous" />
+          crossorigin="anonymous"/>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserProfile.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserProfile.css"/>
     <title>Profile</title>
 </head>
 <body>
 
 <%
-    if (session.getAttribute("user") == null){
+    if (session.getAttribute("user") == null) {
         response.sendRedirect("Login.jsp");
-    }else {
-    User user = (User) session.getAttribute("user");
+    } else {
+        User user = (User) session.getAttribute("user");
 %>
 
 <section class="Login-Page mx-5">
@@ -72,19 +72,24 @@
                     <div class="profile-card my-4">
                         <img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png"
-                                class="img-fluid profile-image" alt="Profile-Image" />
-                        <h1><%=user.getFirstName()%> <%=user.getLastName()%></h1>
+                                class="img-fluid profile-image" alt="Profile-Image"/>
+                        <h1><%=user.getFirstName()%> <%=user.getLastName()%>
+                        </h1>
                         <div class="row mt-3">
                             <div class="col-lg-6 px-3">
                                 <h6>Email</h6>
-                                <p><%=user.getEmail()%></p>
+                                <p><%=user.getEmail()%>
+                                </p>
                                 <h6>Contact Number</h6>
-                                <p>+91 <%=user.getContactNumber()%></p>
+                                <p>+91 <%=user.getContactNumber()%>
+                                </p>
 
                             </div>
                             <div class="col-lg-6 px-3">
                                 <h6>Address</h6>
-                                <h4 class="address-para"><%=user.getAddress()%> - <%=user.getCity()%> <%=user.getPinCode()%></h4>
+                                <h4 class="address-para"><%=user.getAddress()%>
+                                    - <%=user.getCity()%> <%=user.getPinCode()%>
+                                </h4>
                             </div>
                         </div>
                     </div>
