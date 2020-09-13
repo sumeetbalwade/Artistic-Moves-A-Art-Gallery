@@ -49,12 +49,13 @@
     <!--    ChangePasswordServlet Servlet-->
     <servlet>
         <description></description>
-        <display-name>ChangePasswordServlet</display-name>
-        <servlet-name>ChangePasswordServlet</servlet-name>
-        <servlet-class>com.ArtisticMoves.ChangePasswordServlet</servlet-class>
+        <display-name>LogOutServlet</display-name>
+        <servlet-name>LogOutServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.LogOutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ChangePasswordServlet</servlet-name>
-        <url-pattern>/ChangePasswordServlet</url-pattern>
+        <servlet-name>LogOutServlet</servlet-name>
+        <url-pattern>/LogOutServlet</url-pattern>
     </servlet-mapping>
+
 </web-app>
