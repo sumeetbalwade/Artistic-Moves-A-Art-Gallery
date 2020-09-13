@@ -69,7 +69,7 @@
             </div>
             <div class="col-lg-8 py-2 px-3">
                 <div class="profile-section">
-                    <div class="profile-card">
+                    <div class="profile-card my-4">
                         <img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png"
                                 class="img-fluid profile-image" alt="Profile-Image" />
