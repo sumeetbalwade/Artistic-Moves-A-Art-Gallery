@@ -42,8 +42,7 @@ public class ServletRegister extends HttpServlet {
             model.setCity(city);
             model.setState(state);
 
-            UserDAO ud = new UserDAO();
-            int result = ud.insertUser(model);
+            int result = UserDAO.insertUser(model);
 
             if (result == 1) {
                 response.sendRedirect("Login.jsp");

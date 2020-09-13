@@ -3,21 +3,25 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     background-image: url('https://images.pexels.com/photos/1053687/pexels-photo-1053687.jpeg?cs=srgb&dl=pexels-marko-blazevic-1053687.jpg&fm=jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .row {
     background: white;
     border-radius: 40px;
 }
-.btn{
+
+.btn {
     width: 200px;
     background-color: black;
 }
-.side-menu{
+
+.side-menu {
     border-radius: 0 40px 40px 0;
     background-image: url("https://images.pexels.com/photos/3530054/pexels-photo-3530054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
@@ -25,9 +29,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-.side-btn{
+
+.side-btn {
     margin: 10px 43%;
 }
+
 .ContactUs-page {
     margin-top: 10vh;
     margin-bottom: 10vh;
