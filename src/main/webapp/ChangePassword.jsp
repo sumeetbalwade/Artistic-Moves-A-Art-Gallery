@@ -31,7 +31,7 @@
                 <h3>Change Password</h3>
 
                 <!-- form action -->
-                <form action="ChangePasswordServlet" method="post">
+                <form action="ChangePasswordServlet" method="post" onsubmit="return checkForm(this);">
                     <div class="form-row">
                         <div class="col-lg-10">
                             <input
@@ -93,6 +93,47 @@
         </div>
     </div>
 </section>
+
+
+<script type="text/javascript">
+
+    function checkForm(form) {
+
+        if (form.newPassword.value != "" && form.newPassword.value == form.confirmPassword.value) {
+            if (form.newPassword.value.length < 6) {
+                alert("Error: Password must contain at least six characters!");
+                form.newPassword.focus();
+                return false;
+            }
+            re = /[0-9]/;
+            if (!re.test(form.newPassword.value)) {
+                alert("Error: password must contain at least one number (0-9)!");
+                form.newPassword.focus();
+                return false;
+            }
+            re = /[a-z]/;
+            if (!re.test(form.newPassword.value)) {
+                alert("Error: password must contain at least one lowercase letter (a-z)!");
+                form.newPassword.focus();
+                return false;
+            }
+            re = /[A-Z]/;
+            if (!re.test(form.newPassword.value)) {
+                alert("Error: password must contain at least one uppercase letter (A-Z)!");
+                form.newPassword.focus();
+                return false;
+            }
+        } else {
+            alert("Error: Please check that you've entered and confirmed your password!");
+            form.newPassword.focus();
+            return false;
+        }
+        return true;
+    }
+
+</script>
+
+
 <% }%>
 
 </body>
