@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://images.pexels.com/photos/1053687/pexels-photo-1053687.jpeg?cs=srgb&dl=pexels-marko-blazevic-1053687.jpg&fm=jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Login-Page {
+    margin-top: 10vh;
+}
+
+.row-main {
+    background: white;
+    border-radius: 40px;
+    box-shadow: 10px 10px 20px gray;
+}
+
+/* left section */
+.sidebar {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+.sidebar a {
+    color: white;
+    width: 100%;
+    display: block;
+    line-height: 3rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background-color;
+    font-size: 1.3rem;
+}
+
+.sidebar a:hover {
+    background-color: #a2d5f2;
+}
+
+.sidebar i {
+    padding-right: 1rem;
+}
+
+.sidebar-card {
+    margin-left: 10%;
+}
+
+/* Right section */
+
+.right-section {
+    background-color: #1d2d50;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+    height: 70vh;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.profile-card {
+    text-align: center;
+    width: 100%;
+}
+
+.profile-image {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.profile-card h1 {
+    letter-spacing: normal;
+    margin-top: 1rem;
+    color: black;
+    text-transform: capitalize;
+    font-family: 'Playfair Display', serif;
+}
+
+.profile-card p {
+    color: #66bfbf;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+.row h6 {
+    margin: 1.3rem 0 0;
+}
+
+.address-para {
+    font-size: medium;
+    text-align: center;
+    margin: 0 0 0 15%;
+    width: 70%;
+    color: #66bfbf;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-wrap: break-word;
+}
+
+.login-btn {
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 100%;
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
