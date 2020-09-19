@@ -16,7 +16,7 @@
 
 <div class="data-container">
     <div class="row">
-        <div class="col-xl-6 col-lg-12 my-3">
+        <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
                     <div class="col-md-5 media">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-lg-12 my-3">
+        <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
                     <div class="col-md-5 media">
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-lg-12 my-3">
+        <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
                     <div class="col-md-5 media">
@@ -106,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-lg-12 my-3">
+        <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
                     <div class="col-md-5 media">
@@ -136,7 +136,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-lg-12 my-3">
+        <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
                     <div class="col-md-5 media">
@@ -166,7 +166,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-lg-12 my-3">
+        <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
                     <div class="col-md-5 media">
@@ -196,7 +196,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-lg-12 my-3">
+        <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
                     <div class="col-md-5 media">
@@ -226,7 +226,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-lg-12 my-3">
+        <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
                     <div class="col-md-5 media">
