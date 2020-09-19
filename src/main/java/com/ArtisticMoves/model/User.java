@@ -1,9 +1,47 @@
 package com.ArtisticMoves.model;
 
+import java.io.InputStream;
+
 public class User {
+    private String profilePicture;
+    private InputStream tempPic;
     private String firstName, lastName, email, contactNumber, password, userType;
     private int id;
     private String address, pinCode, city, state;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "profilePicture=" + profilePicture +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", password='" + password + '\'' +
+                ", userType='" + userType + '\'' +
+                ", id=" + id +
+                ", address='" + address + '\'' +
+                ", pinCode='" + pinCode + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
+
+    public InputStream getTempPic() {
+        return tempPic;
+    }
+
+    public void setTempPic(InputStream tempPic) {
+        this.tempPic = tempPic;
+    }
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
 
     public String getUserType() {
         return userType;
@@ -95,20 +133,4 @@ public class User {
     }
 
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
-                ", password='" + password + '\'' +
-                ", userType='" + userType + '\'' +
-                ", id=" + id +
-                ", address='" + address + '\'' +
-                ", pinCode='" + pinCode + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                '}';
-    }
 }

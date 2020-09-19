@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" session="true" import="com.ArtisticMoves.model.User" %>
+
 <html>
 <head>
     <meta charset="UTF-8"/>
@@ -71,7 +72,11 @@
                 <div class="profile-section">
                     <div class="profile-card my-4">
                         <img
+                                <% if (user.getProfilePicture() == null) {%>
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png"
+                                <%} else {%>
+                                src="data:image/jpg;base64,<%=user.getProfilePicture()%>"
+                                <%}%>
                                 class="img-fluid profile-image" alt="Profile-Image"/>
                         <h1><%=user.getFirstName()%> <%=user.getLastName()%>
                         </h1>

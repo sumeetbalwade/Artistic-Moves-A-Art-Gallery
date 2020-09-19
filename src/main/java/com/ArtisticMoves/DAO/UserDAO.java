@@ -2,12 +2,13 @@ package com.ArtisticMoves.DAO;
 
 import com.ArtisticMoves.model.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.sql.*;
+import java.util.Base64;
 
 public class UserDAO {
+
 
     //method to get user
     public static User getUser(String email) {
@@ -34,6 +35,7 @@ public class UserDAO {
                 user.setCity(rs.getString("city"));
                 user.setState(rs.getString("state"));
                 user.setPinCode(rs.getString("pincode"));
+                user.setProfilePicture(fetchImage(rs.getBlob("profilePicture")));
                 con.close();
                 return user;
             }
@@ -52,7 +54,7 @@ public class UserDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
-            PreparedStatement ps = con.prepareStatement("insert into users values (null,?,?,?,?,?,?,?,?,?,?);");
+            PreparedStatement ps = con.prepareStatement("insert into users values (null,?,?,?,?,?,?,?,?,?,?,?);");
             ps.setString(1, user.getUserType());
             ps.setString(2, user.getFirstName());
             ps.setString(3, user.getLastName());
@@ -63,7 +65,7 @@ public class UserDAO {
             ps.setString(8, user.getCity());
             ps.setString(9, user.getState());
             ps.setString(10, user.getPinCode());
-
+            ps.setBlob(11, user.getTempPic());
             status = ps.executeUpdate();
             con.close();
 
@@ -120,6 +122,34 @@ public class UserDAO {
             System.out.println(e);
         }
         return status;
+
+    }
+
+    private static String fetchImage(Blob b) {
+        String img = null;
+        if (b != null) {
+
+            try {
+                InputStream inputStream = b.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                byte[] imageBytes = outputStream.toByteArray();
+                img = Base64.getEncoder().encodeToString(imageBytes);
+
+                inputStream.close();
+                outputStream.close();
+
+            } catch (Exception throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return img;
 
     }
 

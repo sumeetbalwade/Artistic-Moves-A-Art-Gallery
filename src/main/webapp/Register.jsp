@@ -76,14 +76,9 @@
                                    style="text-align: initial;">Choose
                                 file</label>
                             <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                   aria-describedby="inputGroupFileAddon01">
+                                   aria-describedby="inputGroupFileAddon01" name="profilePicture">
                         </div>
                     </div>
-                    <%--                    <div class="custom-file">--%>
-                    <%--                        <input type="file" class="custom-file-input" id="inputGroupFile01"--%>
-                    <%--                               aria-describedby="inputGroupFileAddon01">--%>
-                    <%--                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>--%>
-                    <%--                    </div>--%>
                 </div>
             </div>
             <div class="row">

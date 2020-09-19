@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -27,6 +28,8 @@ public class ServletRegister extends HttpServlet {
         String pinCode = request.getParameter("pinCode");
         String city = request.getParameter("city");
         String state = request.getParameter("state");
+        Part tempProfilePicture = request.getPart("profilePicture");
+
 
         if (password.equals(confPassword)) {
 
@@ -41,6 +44,13 @@ public class ServletRegister extends HttpServlet {
             model.setPinCode(pinCode);
             model.setCity(city);
             model.setState(state);
+            if (tempProfilePicture != null) {
+                long fileSize = tempProfilePicture.getSize();
+                String fileContent = tempProfilePicture.getContentType();
+                model.setTempPic(tempProfilePicture.getInputStream());
+            } else {
+                model.setTempPic(null);
+            }
 
             int result = UserDAO.insertUser(model);
 
