@@ -11,6 +11,8 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/ViewProduct.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -28,19 +30,20 @@
                         <h3>Card Name</h3>
                         <!-- User Name -->
                         <h6>Artist : Sagar Mahajan</h6>
+                        <hr>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
-                            This is image. This is image. This is image. This is image.
-                            This is image. This is image.</p>
+                            This is image. This is image. </p>
                         <!-- Product Price -->
-                        Price : Rs 200 <br>
-                        <!-- Product Quantity -->
+                        <div class="price">
+                            Price : &#8377; 200
+                        </div>                        <!-- Product Quantity -->
                         Quantity : 5
                         <div class="row">
-                            <!-- Add to cart button -->
-                            <button type="submit" class="btn btn-dark m-2">Add To Cart</button>
                             <!-- Edit product detail -->
-                            <a href="" class="btn btn-dark m-2">Edit</a>
+                            <a href="" class="btn btn-primary m-2">Edit</a>
+                            <!-- Delete product detail -->
+                            <a href="" class="btn btn-danger m-2">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -58,19 +61,20 @@
                         <h3>Card Name</h3>
                         <!-- User Name -->
                         <h6>Artist : Sagar Mahajan</h6>
+                        <hr>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
-                            This is image. This is image. This is image. This is image.
-                            This is image. This is image.</p>
+                            This is image. This is image. </p>
                         <!-- Product Price -->
-                        Price : Rs 200 <br>
-                        <!-- Product Quantity -->
+                        <div class="price">
+                            Price : &#8377; 200
+                        </div>                        <!-- Product Quantity -->
                         Quantity : 5
                         <div class="row">
-                            <!-- Add to cart button -->
-                            <button type="submit" class="btn btn-dark m-2">Add To Cart</button>
                             <!-- Edit product detail -->
-                            <a href="" class="btn btn-dark m-2">Edit</a>
+                            <a href="" class="btn btn-primary m-2">Edit</a>
+                            <!-- Delete product detail -->
+                            <a href="" class="btn btn-danger m-2">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -88,19 +92,20 @@
                         <h3>Card Name</h3>
                         <!-- User Name -->
                         <h6>Artist : Sagar Mahajan</h6>
+                        <hr>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
-                            This is image. This is image. This is image. This is image.
-                            This is image. This is image.</p>
+                            This is image. This is image. </p>
                         <!-- Product Price -->
-                        Price : Rs 200 <br>
-                        <!-- Product Quantity -->
+                        <div class="price">
+                            Price : &#8377; 200
+                        </div>                        <!-- Product Quantity -->
                         Quantity : 5
                         <div class="row">
-                            <!-- Add to cart button -->
-                            <button type="submit" class="btn btn-dark m-2">Add To Cart</button>
                             <!-- Edit product detail -->
-                            <a href="" class="btn btn-dark m-2">Edit</a>
+                            <a href="" class="btn btn-primary m-2">Edit</a>
+                            <!-- Delete product detail -->
+                            <a href="" class="btn btn-danger m-2">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -118,19 +123,20 @@
                         <h3>Card Name</h3>
                         <!-- User Name -->
                         <h6>Artist : Sagar Mahajan</h6>
+                        <hr>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
-                            This is image. This is image. This is image. This is image.
-                            This is image. This is image.</p>
+                            This is image. This is image. </p>
                         <!-- Product Price -->
-                        Price : Rs 200 <br>
-                        <!-- Product Quantity -->
+                        <div class="price">
+                            Price : &#8377; 200
+                        </div>                        <!-- Product Quantity -->
                         Quantity : 5
                         <div class="row">
-                            <!-- Add to cart button -->
-                            <button type="submit" class="btn btn-dark m-2">Add To Cart</button>
                             <!-- Edit product detail -->
-                            <a href="" class="btn btn-dark m-2">Edit</a>
+                            <a href="" class="btn btn-primary m-2">Edit</a>
+                            <!-- Delete product detail -->
+                            <a href="" class="btn btn-danger m-2">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -148,19 +154,20 @@
                         <h3>Card Name</h3>
                         <!-- User Name -->
                         <h6>Artist : Sagar Mahajan</h6>
+                        <hr>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
-                            This is image. This is image. This is image. This is image.
-                            This is image. This is image.</p>
+                            This is image. This is image. </p>
                         <!-- Product Price -->
-                        Price : Rs 200 <br>
-                        <!-- Product Quantity -->
+                        <div class="price">
+                            Price : &#8377; 200
+                        </div>                        <!-- Product Quantity -->
                         Quantity : 5
                         <div class="row">
-                            <!-- Add to cart button -->
-                            <button type="submit" class="btn btn-dark m-2">Add To Cart</button>
                             <!-- Edit product detail -->
-                            <a href="" class="btn btn-dark m-2">Edit</a>
+                            <a href="" class="btn btn-primary m-2">Edit</a>
+                            <!-- Delete product detail -->
+                            <a href="" class="btn btn-danger m-2">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -178,19 +185,20 @@
                         <h3>Card Name</h3>
                         <!-- User Name -->
                         <h6>Artist : Sagar Mahajan</h6>
+                        <hr>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
-                            This is image. This is image. This is image. This is image.
-                            This is image. This is image.</p>
+                            This is image. This is image. </p>
                         <!-- Product Price -->
-                        Price : Rs 200 <br>
-                        <!-- Product Quantity -->
+                        <div class="price">
+                            Price : &#8377; 200
+                        </div>                        <!-- Product Quantity -->
                         Quantity : 5
                         <div class="row">
-                            <!-- Add to cart button -->
-                            <button type="submit" class="btn btn-dark m-2">Add To Cart</button>
                             <!-- Edit product detail -->
-                            <a href="" class="btn btn-dark m-2">Edit</a>
+                            <a href="" class="btn btn-primary m-2">Edit</a>
+                            <!-- Delete product detail -->
+                            <a href="" class="btn btn-danger m-2">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -208,19 +216,20 @@
                         <h3>Card Name</h3>
                         <!-- User Name -->
                         <h6>Artist : Sagar Mahajan</h6>
+                        <hr>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
-                            This is image. This is image. This is image. This is image.
-                            This is image. This is image.</p>
+                            This is image. This is image. </p>
                         <!-- Product Price -->
-                        Price : Rs 200 <br>
-                        <!-- Product Quantity -->
+                        <div class="price">
+                            Price : &#8377; 200
+                        </div>                        <!-- Product Quantity -->
                         Quantity : 5
                         <div class="row">
-                            <!-- Add to cart button -->
-                            <button type="submit" class="btn btn-dark m-2">Add To Cart</button>
                             <!-- Edit product detail -->
-                            <a href="" class="btn btn-dark m-2">Edit</a>
+                            <a href="" class="btn btn-primary m-2">Edit</a>
+                            <!-- Delete product detail -->
+                            <a href="" class="btn btn-danger m-2">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -238,19 +247,20 @@
                         <h3>Card Name</h3>
                         <!-- User Name -->
                         <h6>Artist : Sagar Mahajan</h6>
+                        <hr>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
-                            This is image. This is image. This is image. This is image.
-                            This is image. This is image.</p>
+                            This is image. This is image. </p>
                         <!-- Product Price -->
-                        Price : Rs 200 <br>
-                        <!-- Product Quantity -->
+                        <div class="price">
+                            Price : &#8377; 200
+                        </div>                        <!-- Product Quantity -->
                         Quantity : 5
                         <div class="row">
-                            <!-- Add to cart button -->
-                            <button type="submit" class="btn btn-dark m-2">Add To Cart</button>
                             <!-- Edit product detail -->
-                            <a href="" class="btn btn-dark m-2">Edit</a>
+                            <a href="" class="btn btn-primary m-2">Edit</a>
+                            <!-- Delete product detail -->
+                            <a href="" class="btn btn-danger m-2">Delete</a>
                         </div>
                     </div>
                 </div>
