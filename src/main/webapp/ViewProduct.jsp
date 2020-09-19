@@ -15,17 +15,43 @@
 
 </head>
 <body>
-
+<nav class="navbar navbar-expand-lg nav-container ">
+    <button class="navbar-toggler navbar-dark"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon btn-lg"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav container d-flex justify-content-around">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="EditProfile.jsp">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ChangePassword.jsp">Change Password</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Add Product</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <div class="data-container">
     <div class="row">
         <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
-                    <div class="col-md-5 media">
+                    <div class="col-5 media">
                         <img class="card-img align-self-center img-fluid"
                              src="https://images.pexels.com/photos/3109807/pexels-photo-3109807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-7">
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
@@ -52,11 +78,11 @@
         <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
-                    <div class="col-md-5 media">
+                    <div class="col-5 media">
                         <img class="card-img align-self-center img-fluid"
                              src="https://images.pexels.com/photos/3298835/pexels-photo-3298835.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-7">
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
@@ -83,11 +109,11 @@
         <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
-                    <div class="col-md-5 media">
+                    <div class="col-5 media">
                         <img class="card-img align-self-center img-fluid"
                              src="https://images.pexels.com/photos/2807495/pexels-photo-2807495.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                     </div>
-                    <div class="col-md-7 ">
+                    <div class="col-7 ">
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
@@ -114,11 +140,11 @@
         <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
-                    <div class="col-md-5 media">
+                    <div class="col-5 media">
                         <img class="card-img align-self-center img-fluid"
                              src="https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-7">
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
@@ -145,11 +171,11 @@
         <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
-                    <div class="col-md-5 media">
+                    <div class="col-5 media">
                         <img class="card-img align-self-center img-fluid"
                              src="https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-7">
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
@@ -176,11 +202,11 @@
         <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
-                    <div class="col-md-5 media">
+                    <div class="col-5 media">
                         <img class="card-img align-self-center img-fluid"
                              src="https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-7">
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
@@ -207,11 +233,11 @@
         <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
-                    <div class="col-md-5 media">
+                    <div class="col-5 media">
                         <img class="card-img align-self-center img-fluid"
                              src="https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-7">
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
@@ -238,11 +264,11 @@
         <div class="col-lg-6 col-md-12 my-3">
             <div class="card">
                 <div class="row p-2">
-                    <div class="col-md-5 media">
+                    <div class="col-5 media">
                         <img class="card-img align-self-center img-fluid"
                              src="https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-7">
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
