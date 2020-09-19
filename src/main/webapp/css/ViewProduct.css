@@ -14,19 +14,25 @@ body {
 
 h3{
     font-family: 'Merriweather', serif;
+    margin-bottom: 0.1rem;
 }
 h6{
     size: 9px;
     font-style: italic;
     color : #808080;
+    margin-bottom: 0.1rem;
+
 }
 hr{
+    margin-bottom: .5rem;
+    margin-top: .5rem;
     width: 50px;
 }
 p{
     color : #808080;
     size: 9px;
     line-height: 1.2;
+    margin-bottom: .5rem;
 }
 .price{
     font-weight: bold;
