@@ -27,7 +27,7 @@
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
-                        <h6>Sagar Mahajan</h6>
+                        <h6>Artist : Sagar Mahajan</h6>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
                             This is image. This is image. This is image. This is image.
@@ -57,7 +57,7 @@
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
-                        <h6>Sagar Mahajan</h6>
+                        <h6>Artist : Sagar Mahajan</h6>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
                             This is image. This is image. This is image. This is image.
@@ -87,7 +87,7 @@
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
-                        <h6>Sagar Mahajan</h6>
+                        <h6>Artist : Sagar Mahajan</h6>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
                             This is image. This is image. This is image. This is image.
@@ -117,7 +117,7 @@
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
-                        <h6>Sagar Mahajan</h6>
+                        <h6>Artist : Sagar Mahajan</h6>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
                             This is image. This is image. This is image. This is image.
@@ -147,7 +147,7 @@
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
-                        <h6>Sagar Mahajan</h6>
+                        <h6>Artist : Sagar Mahajan</h6>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
                             This is image. This is image. This is image. This is image.
@@ -177,7 +177,7 @@
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
-                        <h6>Sagar Mahajan</h6>
+                        <h6>Artist : Sagar Mahajan</h6>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
                             This is image. This is image. This is image. This is image.
@@ -207,7 +207,7 @@
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
-                        <h6>Sagar Mahajan</h6>
+                        <h6>Artist : Sagar Mahajan</h6>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
                             This is image. This is image. This is image. This is image.
@@ -237,7 +237,7 @@
                         <!-- Product Name -->
                         <h3>Card Name</h3>
                         <!-- User Name -->
-                        <h6>Sagar Mahajan</h6>
+                        <h6>Artist : Sagar Mahajan</h6>
                         <!-- Product Description -->
                         <p>This is image. This is image. This is image. This is image.
                             This is image. This is image. This is image. This is image.
