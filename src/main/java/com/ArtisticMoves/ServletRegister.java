@@ -4,6 +4,7 @@ import com.ArtisticMoves.DAO.UserDAO;
 import com.ArtisticMoves.model.User;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "ServletRegister")
+@MultipartConfig(maxFileSize = 169999999)
 public class ServletRegister extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");

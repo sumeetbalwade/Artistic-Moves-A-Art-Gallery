@@ -19,7 +19,7 @@
 <div class="row main">
     <div id="registrationForm" class="col-lg-9">
         <h1>Registration Form</h1>
-        <form action="ServletRegister" method="post" onsubmit="return checkForm(this);">
+        <form action="ServletRegister" method="post" onsubmit="return checkForm(this);" enctype="multipart/form-data">
             <h3>Personal Detail</h3>
             <div class="row">
                 <div class="col">
