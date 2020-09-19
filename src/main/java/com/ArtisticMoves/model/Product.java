@@ -1,4 +1,5 @@
 package com.ArtisticMoves.model;
+import java.io.InputStream;
 import java.util.Date;
 public class Product {
     private String title,  content, artistName,productImage;

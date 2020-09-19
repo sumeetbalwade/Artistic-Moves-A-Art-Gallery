@@ -82,4 +82,16 @@
         <url-pattern>/ChangeAvatarServlet</url-pattern>
     </servlet-mapping>
 
+    <!--    AddProductServlet Servlet-->
+    <servlet>
+        <description></description>
+        <display-name>AddProductServlet</display-name>
+        <servlet-name>AddProductServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.AddProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddProductServlet</servlet-name>
+        <url-pattern>/AddProductServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
