@@ -122,3 +122,10 @@ body {
     border: 1px solid black;
     color: black;
 }
+
+.change-profile-avatar {
+    mso-line-spacing: none;
+    font-size: 5px;
+    color: #9d65c9;
+    font-family: 'Merriweather', serif;
+}
