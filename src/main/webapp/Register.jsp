@@ -19,7 +19,7 @@
 <div class="row main">
     <div id="registrationForm" class="col-lg-9">
         <h1>Registration Form</h1>
-        <form action="ServletRegister" method="post" onsubmit="return checkForm(this);">
+        <form action="ServletRegister" method="post" onsubmit="return checkForm(this);" enctype="multipart/form-data">
             <h3>Personal Detail</h3>
             <div class="row">
                 <div class="col">
@@ -61,6 +61,24 @@
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" placeholder="State*" name="state">
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <label class="custom-file-label " for="inputGroupFile01"
+                                   style="text-align: initial;">Choose
+                                file</label>
+                            <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                   aria-describedby="inputGroupFileAddon01" name="profilePicture">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
