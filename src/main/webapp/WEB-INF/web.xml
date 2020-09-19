@@ -58,6 +58,7 @@
         <url-pattern>/ChangePasswordServlet</url-pattern>
     </servlet-mapping>
 
+    <!--    LogOutServlet Servlet-->
     <servlet>
         <description></description>
         <display-name>LogOutServlet</display-name>
@@ -67,6 +68,18 @@
     <servlet-mapping>
         <servlet-name>LogOutServlet</servlet-name>
         <url-pattern>/LogOutServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--    ChangeAvatarServlet Servlet-->
+    <servlet>
+        <description></description>
+        <display-name>ChangeAvatarServlet</display-name>
+        <servlet-name>ChangeAvatarServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.ChangeAvatarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeAvatarServlet</servlet-name>
+        <url-pattern>/ChangeAvatarServlet</url-pattern>
     </servlet-mapping>
 
 </web-app>
