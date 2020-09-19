@@ -49,7 +49,7 @@
                                 <i class="fas fa-user-edit"></i>Edit Profile
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="AddProduct.jsp">
                             <div class="sidebar-card">
                                 <i class="fas fa-gifts"></i>Add Product
                             </div>
