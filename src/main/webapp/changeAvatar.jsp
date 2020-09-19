@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+          rel="stylesheet">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
@@ -64,7 +67,7 @@
                 <div class="profile-section">
                     <div class="profile-card my-4">
                         <img
-                                <% if (user.getProfilePicture() == null) {%>
+                                <% if (user.getProfilePicture() == null) { %>
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png"
                                 <%} else {%>
                                 src="data:image/jpg;base64,<%=user.getProfilePicture()%>"
@@ -73,20 +76,25 @@
                         <h1>Change Avatar
                         </h1>
                         <form action="ChangeAvatarServlet" method="post" enctype="multipart/form-data">
+                            <div>
 
-                            <div class="input-group my-5" style="width: 50%;margin-left: 25%;">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                <div class="input-group mt-5 mb-2" style="width: 50%;margin-left: 25%;">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <label class="custom-file-label " for="inputGroupFile01"
+                                               style="text-align: initial;">Choose
+                                            file</label>
+                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                               aria-describedby="inputGroupFileAddon01" name="profilePicture">
+                                    </div>
                                 </div>
-                                <div class="custom-file">
-                                    <label class="custom-file-label " for="inputGroupFile01"
-                                           style="text-align: initial;">Choose
-                                        file</label>
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                           aria-describedby="inputGroupFileAddon01" name="profilePicture">
-                                </div>
-                                <h6>Upload avatar of square shape like 300 x 300 px</h6>
-                                <h6>Upload avatar of Size under 256kb</h6>
+
+                                <input class="btn btn-dark mb-2" type="submit" value="Submit">
+                                <h4 class="address-para">Upload avatar of square shape like 300 x 300 px</h4>
+                                <h4 class="address-para">Upload avatar of Size under 256kb</h4>
+
                             </div>
                         </form>
                     </div>
