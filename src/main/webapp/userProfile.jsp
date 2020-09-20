@@ -51,7 +51,7 @@
                         </a>
                         <a href="AddProduct.jsp">
                             <div class="sidebar-card">
-                                <i class="fas fa-gifts"></i>Add Product
+                                <i class="fas fa-gift"></i>Add Product
                             </div>
                         </a>
                         <a href="ViewProduct.jsp">
@@ -59,6 +59,13 @@
                                 <i class="fas fa-gifts"></i>View Products
                             </div>
                         </a>
+                        <% if (user.getUserType().equals("admin")) { %>
+                        <a href="AllUser.jsp">
+                            <div class="sidebar-card">
+                                <i class="fas fa-users"></i>All Users
+                            </div>
+                        </a>
+                        <% } %>
                         <a href="changeAvatar.jsp">
                             <div class="sidebar-card">
                                 <i class="fas fa-user-tie"></i>Change Avatar

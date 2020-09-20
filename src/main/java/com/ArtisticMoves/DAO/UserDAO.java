@@ -5,7 +5,9 @@ import com.ArtisticMoves.model.User;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 public class UserDAO {
 
@@ -46,6 +48,43 @@ public class UserDAO {
         }
         return null;
     }
+
+    //method to get All user
+    public static List<User> getUser() {
+
+        List<User> userList = new ArrayList<>();
+
+        try {
+            Class.forName(Database.driver);
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("select * from users;");
+            ResultSet rs = ps.executeQuery();
+
+
+            while (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setUserType(rs.getString("userType"));
+                user.setFirstName(rs.getString("firstName"));
+                user.setLastName(rs.getString("lastName"));
+                user.setEmail(rs.getString("email"));
+                user.setContactNumber(rs.getString("contactNumber"));
+                user.setAddress(rs.getString("address"));
+                user.setCity(rs.getString("city"));
+                user.setState(rs.getString("state"));
+                user.setPinCode(rs.getString("pincode"));
+                user.setProfilePicture(fetchImage(rs.getBlob("profilePicture")));
+                userList.add(user);
+            }
+            con.close();
+            return userList;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
 
     //method to insert user
     public static int insertUser(User user) {
@@ -170,6 +209,24 @@ public class UserDAO {
             System.out.println(e);
         }
 
+        return status;
+    }
+
+
+    public static int deleteUser(int userId) {
+        int status = 0;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("delete from users where id = ?");
+
+            ps.setInt(1, userId);
+            status = ps.executeUpdate();
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return status;
     }
 }
