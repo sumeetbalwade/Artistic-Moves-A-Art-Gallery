@@ -1,10 +1,11 @@
 package com.ArtisticMoves.model;
+
 import java.io.InputStream;
-import java.util.Date;
+
 public class Product {
-    private String title,  content, artistName,productImage;
+    private String title, content, artistName, productImage;
     private InputStream tempPic;
-    private int id, quantity,userId;
+    private int id, quantity, userId;
     private float price;
 
     public String getTitle() {

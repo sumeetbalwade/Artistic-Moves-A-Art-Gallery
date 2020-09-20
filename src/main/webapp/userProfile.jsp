@@ -54,6 +54,11 @@
                                 <i class="fas fa-gifts"></i>Add Product
                             </div>
                         </a>
+                        <a href="ViewProduct.jsp">
+                            <div class="sidebar-card">
+                                <i class="fas fa-gifts"></i>View Products
+                            </div>
+                        </a>
                         <a href="changeAvatar.jsp">
                             <div class="sidebar-card">
                                 <i class="fas fa-user-tie"></i>Change Avatar
