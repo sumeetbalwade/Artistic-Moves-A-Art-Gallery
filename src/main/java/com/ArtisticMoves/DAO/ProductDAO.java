@@ -2,11 +2,11 @@ package com.ArtisticMoves.DAO;
 
 import com.ArtisticMoves.model.Product;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 public class ProductDAO {
@@ -42,9 +42,9 @@ public class ProductDAO {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("select * from products where userId=?;");
-            ps.setInt(1,userId);
+            ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 Product product = new Product();
                 product.setId(rs.getInt("id"));
                 product.setUserId(rs.getInt("userId"));
@@ -53,6 +53,7 @@ public class ProductDAO {
                 product.setQuantity(rs.getInt("quantity"));
                 product.setContent(rs.getString("content"));
                 product.setArtistName(rs.getString("artistName"));
+                product.setProductImage(fetchImage(rs.getBlob("imageProduct")));
                 productList.add(product);
                 product = null;
             }
@@ -66,5 +67,33 @@ public class ProductDAO {
 
     }
 
+
+    private static String fetchImage(Blob b) {
+        String img = null;
+        if (b != null) {
+
+            try {
+                InputStream inputStream = b.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                byte[] imageBytes = outputStream.toByteArray();
+                img = Base64.getEncoder().encodeToString(imageBytes);
+
+                inputStream.close();
+                outputStream.close();
+
+            } catch (Exception throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return img;
+
+    }
 
 }
