@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" import="com.ArtisticMoves.DAO.ProductDAO" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Edit Product</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/EditProduct.css"/>
@@ -96,7 +96,12 @@
             <div class="col-lg-6 side-menu">
                 <div class="media">
                     <img class="card-img align-self-center img-fluid"
+                        <% if (p.getProductImage() == null) {%>
                          src="https://images.pexels.com/photos/3109807/pexels-photo-3109807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        <%} else {%>
+                         src="data:image/jpg;base64,<%=p.getProductImage()%>"
+                        <%}%>
+
                          alt="">
                 </div>
             </div>

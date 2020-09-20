@@ -19,7 +19,7 @@ public class EditProductServlet extends HttpServlet {
         String productTitle = request.getParameter("productTitle");
         int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
         float productPrice = Float.parseFloat(request.getParameter("productPrice"));
-        String productContent =request.getParameter("productContent");
+        String productContent = request.getParameter("productContent");
 
         Product p = new Product();
         p.setId(productId);
@@ -29,9 +29,9 @@ public class EditProductServlet extends HttpServlet {
         p.setContent(productContent);
 
         int status = ProductDAO.updateProduct(p);
-        if (status == 1){
+        if (status == 1) {
             response.sendRedirect("ViewProduct.jsp");
-        }else{
+        } else {
             response.sendRedirect("ViewProduct.jsp");
         }
     }

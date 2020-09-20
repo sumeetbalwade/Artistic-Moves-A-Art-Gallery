@@ -36,7 +36,7 @@ public class ProductDAO {
         return status;
     }
 
-//    Get product list from userid
+    //    Get product list from userid
     public static List<Product> getProduct(int userId) {
         List<Product> productList = new ArrayList<>();
         try {
@@ -68,9 +68,9 @@ public class ProductDAO {
     }
 
     //Get product from product id
-    public static Product getProductFromId(int pId){
+    public static Product getProductFromId(int pId) {
         Product product = new Product();
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("select * from products where id=?;");
@@ -88,27 +88,27 @@ public class ProductDAO {
             }
             con.close();
             return product;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public static int updateProduct(Product p){
+    public static int updateProduct(Product p) {
         int status = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("update products set title= ?,price =?,quantity = ?,content =? where id = ?");
-            ps.setString(1 , p.getTitle());
-            ps.setFloat(2,p.getPrice());
-            ps.setInt(3,p.getQuantity());
-            ps.setString(4,p.getContent());
-            ps.setInt(5,p.getId());
+            ps.setString(1, p.getTitle());
+            ps.setFloat(2, p.getPrice());
+            ps.setInt(3, p.getQuantity());
+            ps.setString(4, p.getContent());
+            ps.setInt(5, p.getId());
 
             status = ps.executeUpdate();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return status;
