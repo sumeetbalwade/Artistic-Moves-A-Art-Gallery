@@ -27,74 +27,78 @@
         User user = (User) session.getAttribute("user");
         List<Product> productList = (List<Product>) ProductDAO.getProduct(user.getId());
 %>
-<nav class="navbar navbar-expand-lg nav-container ">
-    <button class="navbar-toggler navbar-dark"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon btn-lg"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav container d-flex justify-content-around">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.jsp">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="EditProfile.jsp">Edit Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ChangePassword.jsp">Change Password</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="AddProduct.jsp">Add Product</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="data-container">
-    <div class="row">
-        <% for (Product p : productList) {%>
-        <div class="col-lg-6 col-md-12 my-3">
-            <div class="card">
-                <div class="row p-2">
-                    <div class="col-5 media">
-                        <img class="card-img align-self-center img-fluid"
-                             src="data:image/jpg;base64,<%=p.getProductImage()%>"
-                             alt="">
-                    </div>
-                    <div class="col-7">
-                        <!-- Product title -->
-                        <h3><%=p.getTitle()%>
-                        </h3>
-                        <!-- User Name -->
-                        <h6>Artist : <%=p.getArtistName()%>
-                        </h6>
-                        <hr>
-                        <!-- Product Description -->
-                        <p><%=p.getContent()%>
-                        </p>
-                        <!-- Product Price -->
-                        <div class="price">
-                            Price : &#8377; <%=p.getPrice()%>
+<div class=" mx-5 my-5 px-5 py-5">
+    <nav class="navbar navbar-expand-lg nav-container ">
+        <button class="navbar-toggler navbar-dark"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon btn-lg"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav container d-flex justify-content-around">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.jsp">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="userProfile.jsp">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AddProduct.jsp">Add Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="LogOutServlet">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="data-container">
+        <div class="row">
+            <% for (Product p : productList) {%>
+            <div class="col-lg-6 col-md-12 my-3">
+                <div class="card">
+                    <div class="row p-2">
+                        <div class="col-5 media">
+                            <img class="card-img align-self-center img-fluid"
+                                 src="data:image/jpg;base64,<%=p.getProductImage()%>"
+                                 alt="">
                         </div>
-                        <!-- Product Quantity -->
-                        Quantity : <%=p.getQuantity()%>
-                        <div class="row">
-                            <!-- Edit product detail -->
-                            <a href="" class="btn btn-primary m-2">Edit</a>
-                            <!-- Delete product detail -->
-                            <a href="" class="btn btn-danger m-2">Delete</a>
+                        <div class="col-7">
+                            <!-- Product title -->
+                            <h3><%=p.getTitle()%>
+                            </h3>
+                            <!-- User Name -->
+                            <h6>Artist : <%=p.getArtistName()%>
+                            </h6>
+                            <hr>
+                            <!-- Product Description -->
+                            <p><%=p.getContent()%>
+                            </p>
+                            <!-- Product Price -->
+                            <div class="price">
+                                Price : &#8377; <%=p.getPrice()%>
+                            </div>
+                            <!-- Product Quantity -->
+                            Quantity : <%=p.getQuantity()%>
+                            <div class="row">
+                                <!-- Edit product detail -->
+                                <a href="" class="btn btn-primary m-2">Edit</a>
+                                <!-- Delete product detail -->
+                                <a href="" class="btn btn-danger m-2">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <% } %>
         </div>
-        <% } %>
     </div>
 </div>
+
+
 <% }%>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
