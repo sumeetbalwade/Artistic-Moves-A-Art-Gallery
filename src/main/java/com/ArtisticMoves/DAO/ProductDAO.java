@@ -36,6 +36,7 @@ public class ProductDAO {
         return status;
     }
 
+//    Get product list from userid
     public static List<Product> getProduct(int userId) {
         List<Product> productList = new ArrayList<>();
         try {
@@ -61,6 +62,33 @@ public class ProductDAO {
             return productList;
 
         } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
+    //Get product from product id
+    public static Product getProductFromId(int pId){
+        Product product = new Product();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("select * from products where id=?;");
+            ps.setInt(1, pId);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                product.setId(rs.getInt("id"));
+                product.setUserId(rs.getInt("userId"));
+                product.setTitle(rs.getString("title"));
+                product.setPrice(rs.getFloat("price"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setContent(rs.getString("content"));
+                product.setArtistName(rs.getString("artistName"));
+                product.setProductImage(fetchImage(rs.getBlob("imageProduct")));
+            }
+            con.close();
+            return product;
+        }catch (Exception e){
             System.out.println(e);
         }
         return null;

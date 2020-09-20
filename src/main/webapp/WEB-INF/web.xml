@@ -103,5 +103,15 @@
         <servlet-name>DeleteProductServlet</servlet-name>
         <url-pattern>/DeleteProductServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <description>EditProductServlet</description>
+        <display-name>EditProductServlet</display-name>
+        <servlet-name>EditProductServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.EditProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditProductServlet</servlet-name>
+        <url-pattern>/EditProductServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>
