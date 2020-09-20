@@ -66,22 +66,6 @@
                                  src="data:image/jpg;base64,<%=p.getProductImage()%>"
                                  alt="">
                         </div>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-                        <!-- Product Quantity -->
-                        Quantity : <%=p.getQuantity()%>
-                        <div class="row">
-                            <!-- Edit product detail -->
-                            <a href="" class="btn btn-primary m-2">Edit</a>
-                            <!-- Delete product detail -->
-                            <form action="DeleteProductServlet" method="post">
-                                <input type="hidden" name="productId" value="<%= p.getId()%>">
-                                <button type="submit" class="btn btn-danger m-2">Delete</button>
-                            </form>
-
-=======
->>>>>>> Stashed changes
                         <div class="col-7">
                             <!-- Product title -->
                             <h3><%=p.getTitle()%>
@@ -105,10 +89,6 @@
                                 <!-- Delete product detail -->
                                 <a href="" class="btn btn-danger m-2">Delete</a>
                             </div>
-<<<<<<< Updated upstream
-=======
->>>>>>> a59aac3bac27d0b80de9bb18b9166d33f3068617
->>>>>>> Stashed changes
                         </div>
                     </div>
                 </div>
