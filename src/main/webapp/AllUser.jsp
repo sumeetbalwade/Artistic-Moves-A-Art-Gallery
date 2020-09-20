@@ -97,7 +97,7 @@
                             UserTypes : <%=p.getUserType()%>
                             <div class="row">
                                 <!-- Delete User detail -->
-                                <form action="DeleteProductServlet" method="post">
+                                <form action="DeleteUserServlet" method="post">
                                     <input type="hidden" name="productId" value="<%= p.getId()%>">
                                     <button type="submit" class="btn btn-danger m-2 ml-4">Delete</button>
                                 </form>
