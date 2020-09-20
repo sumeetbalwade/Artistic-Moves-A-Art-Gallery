@@ -1,5 +1,6 @@
 <%@ page import="com.ArtisticMoves.model.Product" %>
-<%@ page import="com.ArtisticMoves.DAO.ProductDAO" %><%--
+<%@ page import="com.ArtisticMoves.DAO.ProductDAO" %>
+<%--
   Created by IntelliJ IDEA.
   User: Sagar
   Date: 20-09-2020
@@ -10,17 +11,18 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/EditProduct.css"/>
 </head>
 <body>
 <%
-    int id =Integer.parseInt(request.getParameter("productId"));
+    int id = Integer.parseInt(request.getParameter("productId"));
     //get product detail from product id
     Product p = ProductDAO.getProductFromId(id);
-    if(p == null){
+    if (p == null) {
         response.sendRedirect("ViewProduct.jsp");
-    }else{
+    } else {
 
 %>
 <section class="editImage-page mx-5">
@@ -67,7 +69,7 @@
                     <div class="form-row">
                         <div class="col-lg-10">
                             <div class="form-group">
-                                <label  class="mt-3">
+                                <label class="mt-3">
                                     Product Description</label>
                                 <textarea
                                         class="form-control md-3 p-4"
@@ -91,10 +93,11 @@
 
                 </form>
             </div>
-            <div class="col-lg-6 side-menu" >
+            <div class="col-lg-6 side-menu">
                 <div class="media">
                     <img class="card-img align-self-center img-fluid"
-                         src="https://images.pexels.com/photos/3109807/pexels-photo-3109807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                         src="https://images.pexels.com/photos/3109807/pexels-photo-3109807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         alt="">
                 </div>
             </div>
         </div>
