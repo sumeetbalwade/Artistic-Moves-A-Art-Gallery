@@ -87,10 +87,10 @@
                             Quantity : <%=p.getQuantity()%>
                             <div class="row">
                                 <!-- Edit product detail -->
-                                <a href="" class="btn btn-primary m-2">Edit</a>
-                                <!-- Delete product detail -->
+                                <a href="EditProduct.jsp?productId=<%=p.getId()%>" class="btn btn-primary m-2">Edit</a>
+                                <!--Delete Product -->
                                 <form action="DeleteProductServlet" method="post">
-                                    <input type="hidden" name="productId" value="<%= p.getId()%>">
+                                    <input type="hidden" name="productId" value="<%=p.getId()%>">
                                     <button type="submit" class="btn btn-danger m-2">Delete</button>
                                 </form>
                             </div>
