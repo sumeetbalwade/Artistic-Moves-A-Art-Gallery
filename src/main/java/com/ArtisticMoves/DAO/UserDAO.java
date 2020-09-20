@@ -211,6 +211,24 @@ public class UserDAO {
 
         return status;
     }
+
+
+    public static int deleteUser(int userId) {
+        int status = 0;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("delete from users where id = ?");
+
+            ps.setInt(1, userId);
+            status = ps.executeUpdate();
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return status;
+    }
 }
 
 

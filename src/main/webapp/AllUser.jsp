@@ -98,7 +98,7 @@
                             <div class="row">
                                 <!-- Delete User detail -->
                                 <form action="DeleteUserServlet" method="post">
-                                    <input type="hidden" name="productId" value="<%= p.getId()%>">
+                                    <input type="hidden" name="userId" value="<%= p.getId()%>">
                                     <button type="submit" class="btn btn-danger m-2 ml-4">Delete</button>
                                 </form>
                             </div>
