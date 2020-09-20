@@ -2,7 +2,6 @@ package com.ArtisticMoves;
 
 import com.ArtisticMoves.DAO.ProductDAO;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +15,9 @@ public class DeleteProductServlet extends HttpServlet {
         response.setContentType("text/html");
         int productId = Integer.parseInt(request.getParameter("productId"));
         int status = ProductDAO.deleteProduct(productId);
-        if(status == 1){
+        if (status == 1) {
             response.sendRedirect("ViewProduct.jsp");
-        }
-        else{
+        } else {
             response.sendRedirect("ViewProduct.jsp");
         }
     }

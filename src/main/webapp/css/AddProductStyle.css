@@ -17,15 +17,13 @@ body {
 }
 
 
-
-.btn{
+.btn {
     width: 200px;
     background-color: black;
 }
 
 
-
-.side-menu{
+.side-menu {
     border-radius: 0 40px 40px 0;
     background-image: url("https://images.pexels.com/photos/3651579/pexels-photo-3651579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
@@ -34,10 +32,12 @@ body {
     background-repeat: no-repeat;
 
 }
-.side-btn{
+
+.side-btn {
     margin-left: 45%;
     margin-right: 45%;
 }
+
 .ContactUs-page {
     margin-top: 10vh;
     margin-bottom: 10vh;

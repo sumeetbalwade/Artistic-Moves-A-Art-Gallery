@@ -66,17 +66,18 @@ public class ProductDAO {
         return null;
     }
 
-    public static int deleteProduct(int productId){
+    public static int deleteProduct(int productId) {
         int status = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("delete from products where id = ?");
 
             ps.setInt(1, productId);
-            status=ps.executeUpdate();
+            status = ps.executeUpdate();
+            con.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return status;
