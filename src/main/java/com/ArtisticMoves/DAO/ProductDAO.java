@@ -94,6 +94,26 @@ public class ProductDAO {
         return null;
     }
 
+    public static int updateProduct(Product p){
+        int status = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("update products set title= ?,price =?,quantity = ?,content =? where id = ?");
+            ps.setString(1 , p.getTitle());
+            ps.setFloat(2,p.getPrice());
+            ps.setInt(3,p.getQuantity());
+            ps.setString(4,p.getContent());
+            ps.setInt(5,p.getId());
+
+            status = ps.executeUpdate();
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return status;
+    }
+
     public static int deleteProduct(int productId) {
         int status = 0;
         try {

@@ -38,7 +38,7 @@
                             <input
                                     type="text"
                                     class="form-control my-3 p-4"
-                                    name="productName"
+                                    name="productTitle"
                                     value="<%=p.getTitle()%>"
                             />
                         </div>
@@ -49,7 +49,7 @@
                             <input
                                     type="number"
                                     class="form-control my-3 p-4"
-                                    name="productCount"
+                                    name="productQuantity"
                                     value="<%=p.getQuantity()%>"
                             />
                         </div>
@@ -71,17 +71,17 @@
                             <div class="form-group">
                                 <label class="mt-3">
                                     Product Description</label>
-                                <textarea
-                                        class="form-control md-3 p-4"
-                                        rows="3"
-                                        name="productDescription"
+                                <input
+                                        type="text"
+                                        class="form-control my-3 p-4"
+                                        name="productContent"
                                         value="<%=p.getContent()%>"
-                                >
-                                    </textarea>
+                                />
                             </div>
                         </div>
                     </div>
 
+                    <input type="hidden" name="productId" value="<%=p.getId()%>">
 
                     <div class="form-row">
                         <div class="col-lg-7">
