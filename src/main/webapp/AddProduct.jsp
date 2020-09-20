@@ -118,7 +118,7 @@
                 </div>
                 <div class="form-row">
                     <div class="col-lg-7">
-                        <a class="btn btn-dark my-3 side-btn" href="Login.jsp" role="button">
+                        <a class="btn btn-dark my-3 side-btn" href="userProfile.jsp" role="button">
                             Profile
                         </a>
                     </div>

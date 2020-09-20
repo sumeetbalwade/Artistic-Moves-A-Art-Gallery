@@ -9,7 +9,6 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "AddProductServlet")
 @MultipartConfig(maxFileSize = 169999999)
@@ -17,10 +16,12 @@ public class AddProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("user");
-        int result = 0;
+
+        int result;
+
+
         if (user != null) {
             Product product = new Product();
             product.setUserId(user.getId());
@@ -31,8 +32,7 @@ public class AddProductServlet extends HttpServlet {
             product.setContent(request.getParameter("productDescription"));
             Part tempProfilePicture = request.getPart("productImage");
             if (tempProfilePicture != null) {
-                long fileSize = tempProfilePicture.getSize();
-                String fileContent = tempProfilePicture.getContentType();
+
                 product.setTempPic(tempProfilePicture.getInputStream());
             } else {
                 product.setTempPic(null);
@@ -53,7 +53,7 @@ public class AddProductServlet extends HttpServlet {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession s = request.getSession(false);
         if (s.getAttribute("user") != null) {
             response.sendRedirect("userProfile.jsp");

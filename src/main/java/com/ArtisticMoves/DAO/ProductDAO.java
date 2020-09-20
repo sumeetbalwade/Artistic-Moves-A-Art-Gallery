@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ProductDAO {
 
-
+    //inserting Product
     public static int insertProduct(Product product) {
         int status = 0;
 
@@ -30,7 +30,7 @@ public class ProductDAO {
             con.close();
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return status;
@@ -56,13 +56,12 @@ public class ProductDAO {
                 product.setArtistName(rs.getString("artistName"));
                 product.setProductImage(fetchImage(rs.getBlob("imageProduct")));
                 productList.add(product);
-                product = null;
             }
             con.close();
             return productList;
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return null;
     }
@@ -89,7 +88,7 @@ public class ProductDAO {
             con.close();
             return product;
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return null;
     }
@@ -109,7 +108,7 @@ public class ProductDAO {
             status = ps.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return status;
     }
@@ -120,13 +119,13 @@ public class ProductDAO {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("delete from products where id = ?");
-
             ps.setInt(1, productId);
+
             status = ps.executeUpdate();
             con.close();
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return status;
     }

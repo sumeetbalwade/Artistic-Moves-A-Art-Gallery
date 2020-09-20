@@ -44,7 +44,7 @@ public class UserDAO {
             con.close();
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return null;
     }
@@ -80,7 +80,7 @@ public class UserDAO {
             return userList;
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return null;
     }
@@ -110,12 +110,13 @@ public class UserDAO {
 
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return status;
     }
 
+    //Edit User Profile
     public static int editUserProfile(User user) {
         int status = 0;
         try {
@@ -138,32 +139,32 @@ public class UserDAO {
 
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return status;
 
     }
 
+    //Change Password
     public static int changeUserPasswordDAO(User user, String newPassword) {
         int status = 0;
         try {
             Class.forName(Database.driver);
-            Connection con = DriverManager.getConnection
-                    (Database.URL, Database.userName, Database.password);
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("update users set password=? where id = ?");
             ps.setString(1, newPassword);
             ps.setInt(2, user.getId());
             status = ps.executeUpdate();
             con.close();
 
-
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return status;
 
     }
 
+    //Fetch Image
     private static String fetchImage(Blob b) {
         String img = null;
         if (b != null) {
@@ -192,7 +193,7 @@ public class UserDAO {
 
     }
 
-
+    //Changing image
     public static int changeImage(User user, InputStream inputStream) {
         int status = 0;
 
@@ -206,13 +207,13 @@ public class UserDAO {
             con.close();
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return status;
     }
 
-
+    //Deleting User by id
     public static int deleteUser(int userId) {
         int status = 0;
         try {
@@ -225,7 +226,7 @@ public class UserDAO {
             con.close();
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return status;
     }
