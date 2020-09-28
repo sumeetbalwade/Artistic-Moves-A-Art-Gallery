@@ -17,7 +17,6 @@ public class DeleteOrderServlet extends HttpServlet {
         resp.setContentType("text/html");
         int orderId = Integer.parseInt(req.getParameter("orderId"));
         int status = OrderDAO.deleteOrder(orderId);
-        resp.sendRedirect();
     }
 
     @Override

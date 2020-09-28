@@ -129,6 +129,18 @@
         <url-pattern>/DeleteUserServlet</url-pattern>
     </servlet-mapping>
 
+    <!--    PlaceOrderServlet Servlet    -->
+    <servlet>
+        <description></description>
+        <display-name>PlaceOrderServlet</display-name>
+        <servlet-name>PlaceOrderServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.PlaceOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PlaceOrderServlet</servlet-name>
+        <url-pattern>/PlaceOrderServlet</url-pattern>
+    </servlet-mapping>
+
     <!--    Delete Order Servlet    -->
 
     <servlet>

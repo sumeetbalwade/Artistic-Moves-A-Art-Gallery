@@ -11,45 +11,46 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet("PlaceOrderServlet")
-public class AddOrderServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-        int porductId = Integer.parseInt(req.getParameter("productId"));
-        float price =Float.parseFloat(req.getParameter("productPrice"));
-            int status = 0;
-        HttpSession session = req.getSession(false);
+@WebServlet(name = "PlaceOrderServlet")
+public class PlaceOrderServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("user");
-        if (user != null) {
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        float price =Float.parseFloat(request.getParameter("productPrice"));
+        int status = 0;
+        if (session.getAttribute("user") != null) {
             Order order = new Order();
-            order.getOrderId();
+            order.setOrderId(123);
             order.setUserId(user.getId());
-            order.setProductId(porductId);
+            order.setProductId(productId);
             order.setPrice(price);
 
             status = OrderDAO.insertOrder(order);
             if (status == 1) {
-                req.setAttribute("data", "Order Successfully");
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("InfoPage.jsp");
-                requestDispatcher.forward(req, resp);
+                request.setAttribute("data", "Order Successfully");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("InfoPage.jsp");
+                requestDispatcher.forward(request, response);
             }else {
-                //not placed
+                response.sendRedirect("index.jsp");
             }
+        } else {
+            response.sendRedirect("Login.jsp");
         }
-
 
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession s = req.getSession(false);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession s = request.getSession(false);
         if (s.getAttribute("user") != null) {
-            resp.sendRedirect("userProfile.jsp");
+            response.sendRedirect("userProfile.jsp");
         } else {
-            resp.sendRedirect("Login.jsp");
+            response.sendRedirect("Login.jsp");
         }
     }
 }

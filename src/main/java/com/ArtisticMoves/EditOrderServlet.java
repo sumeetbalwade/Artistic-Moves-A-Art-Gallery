@@ -25,10 +25,8 @@ public class EditOrderServlet extends HttpServlet {
 
         int status = OrderDAO.deleteOrder(orderId);
         if(status==1){
-            resp.sendRedirect();
         }
         else{
-            resp.sendRedirect();
         }
 
     }
