@@ -1,8 +1,5 @@
-<%@ page import="com.ArtisticMoves.model.User" %>
 <%@ page import="com.ArtisticMoves.model.Product" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="com.ArtisticMoves.DAO.ProductDAO" %>
 <%@ page import="com.ArtisticMoves.DAO.OrderDAO" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -17,9 +14,12 @@
 </head>
 <body>
 <%
-        int userId = Integer.parseInt(request.getParameter("userId"));
-        //get order details program
-        List<Product> userOrder = (List<Product>) OrderDAO.getOrderedProduct(userId);
+    int orderId = Integer.parseInt(request.getParameter("orderId"));
+    List<Product> userOrder = (List<Product>) OrderDAO.getOderFromOrderId(orderId);
+    if (userOrder == null) {
+        response.sendRedirect("Login.jsp");
+    }else{
+
 %>
 <div class="mx-5 my-5 px-5 py-5">
     <nav class="navbar navbar-expand-lg nav-container ">
@@ -79,15 +79,7 @@
                             </div>
                             <!-- Product Quantity -->
                             Quantity : <%=p.getQuantity()%>
-                            <div class="row">
-                                <!-- Edit product detail -->
-                                <a href="EditProduct.jsp?productId=<%=p.getId()%>" class="btn btn-primary m-2">Edit</a>
-                                <!--Delete Product -->
-                                <form action="DeleteProductServlet" method="post">
-                                    <input type="hidden" name="productId" value="<%=p.getId()%>">
-                                    <button type="submit" class="btn btn-danger m-2">Delete</button>
-                                </form>
-                            </div>
+
                         </div>
                     </div>
                 </div>
