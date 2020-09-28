@@ -53,7 +53,11 @@
             <div class="card" style="border-radius: 40px;">
                 <div class="media">
                     <img class="card-img align-self-center img-fluid"
-                         src="https://images.unsplash.com/photo-1600221286082-2e33f87bdccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+                        <% if (p.getProductImage() == null) {%>
+                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png"
+                        <%} else {%>
+                         src="data:image/jpg;base64,<%=p.getProductImage()%>"
+                        <%}%>
                     >
                 </div>
                 <div class="content">
@@ -62,7 +66,7 @@
                         <%=p.getTitle()%>
                     </h3>
                     <div class="btn-row">
-                        <a href="" class="btn btn-primary m-2">View</a>
+                        <a href="ViewProductDetails.jsp?productId=<%=p.getId()%>" class="btn btn-primary m-2">View</a>
                     </div>
                 </div>
             </div>
