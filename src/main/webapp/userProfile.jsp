@@ -66,6 +66,25 @@
                             </div>
                         </a>
                         <% } %>
+
+<%--                        if user then it show Your order--%>
+                        <% if(user.getUserType().equals("user")){%>
+                        <a href="UserOrder.jsp?userId = <%=user.getId()%>">
+                            <div class="sidebar-card">
+                                Your Order
+                            </div>
+                        </a>
+                        <%}
+//                        if admin the show product by product id
+                        else{%>
+                        <a href="">
+                            <div class="sidebar-card">
+                                Search By Order Id
+                            </div>
+                        </a>
+                        <% } %>
+
+
                         <a href="changeAvatar.jsp">
                             <div class="sidebar-card">
                                 <i class="fas fa-user-tie"></i>Change Avatar
