@@ -3,6 +3,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.ArtisticMoves.DAO.ProductDAO" %>
+<%@ page import="com.ArtisticMoves.DAO.OrderDAO" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -18,7 +19,7 @@
 <%
         int userId = Integer.parseInt(request.getParameter("userId"));
         //get order details program
-        
+        List<Product> userOrder = (List<Product>) OrderDAO.getOrderedProduct(userId);
 %>
 <div class="mx-5 my-5 px-5 py-5">
     <nav class="navbar navbar-expand-lg nav-container ">
@@ -50,7 +51,7 @@
     </nav>
     <div class="data-container">
         <div class="row">
-            <% for (Product p : productList) {%>
+            <% for (Product p : userOrder) {%>
             <div class="col-lg-6 col-md-12 my-3">
                 <div class="card">
                     <div class="row p-2">
