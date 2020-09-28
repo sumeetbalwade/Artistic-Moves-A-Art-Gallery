@@ -77,9 +77,9 @@ public class OrderDAO {
 
 
 
-    public static int RandomNumber(String args[]) {
+    public static int RandomNumber() {
 
-        int rand = (int) Math.floor(Math.random());
+        int rand = (int)(Math.random() * 10);
         int status=0;
                int result = 0;
         try {
@@ -89,10 +89,12 @@ public class OrderDAO {
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()){
                 result = resultSet.getInt("largest");
+                System.out.println(result);
             }
-            return result +rand;
+            con.close();
         }catch (Exception e){
             e.printStackTrace();
         }
+            return result ;
     }
 }

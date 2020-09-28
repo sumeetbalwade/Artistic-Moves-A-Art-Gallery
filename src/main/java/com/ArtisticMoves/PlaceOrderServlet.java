@@ -1,6 +1,7 @@
 package com.ArtisticMoves;
 
 import com.ArtisticMoves.DAO.OrderDAO;
+import com.ArtisticMoves.DAO.ProductDAO;
 import com.ArtisticMoves.model.Order;
 import com.ArtisticMoves.model.User;
 
@@ -26,7 +27,7 @@ public class PlaceOrderServlet extends HttpServlet {
         int status = 0;
         if (session.getAttribute("user") != null) {
             Order order = new Order();
-            order.setOrderId(123);
+            order.setOrderId(OrderDAO.RandomNumber());
             order.setUserId(user.getId());
             order.setProductId(productId);
             order.setPrice(price);
