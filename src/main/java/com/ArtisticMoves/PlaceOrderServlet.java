@@ -4,6 +4,7 @@ import com.ArtisticMoves.DAO.OrderDAO;
 import com.ArtisticMoves.model.Order;
 import com.ArtisticMoves.model.User;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +32,9 @@ public class AddOrderServlet extends HttpServlet {
 
             status = OrderDAO.insertOrder(order);
             if (status == 1) {
-//                placed
+                req.setAttribute("data", "Order Successfully");
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("InfoPage.jsp");
+                requestDispatcher.forward(req, resp);
             }else {
                 //not placed
             }

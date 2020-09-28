@@ -65,7 +65,7 @@
 
             <!-- Product Configuration -->
             <div class="product-configuration">
-                <h3>Quantity : <%=p.getQuantity()%></h3>
+                <h3><% p.getQuantity()!= ? %>Quantity : <%=p.getQuantity()%><%:%>Out Of Stock</h3>
             </div>
 
             <!-- Product Pricing -->
