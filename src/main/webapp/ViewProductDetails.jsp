@@ -73,7 +73,7 @@
                 <span>₹ <%=p.getPrice()%></span>
             </div>
             <div class="buy-section">
-                <a href="#" class="cart-btn">Buy Now</a>
+                <a href="PlaceOrderServlet?productId=<%=p.getId()%>&productPrice=<%=p.getPrice()%>" class="cart-btn">Buy Now</a>
             </div>
         </div>
     </div>
