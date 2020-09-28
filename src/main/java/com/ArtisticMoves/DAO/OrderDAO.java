@@ -32,7 +32,7 @@ public class OrderDAO {
 
     public static List<Product> getOrderedProduct(int userId){
 
-        List<Product> n;
+        List<Product> n = null;
         List<Product> products = n;
         try{
             Class.forName(Database.driver);

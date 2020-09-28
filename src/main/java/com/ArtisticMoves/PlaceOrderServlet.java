@@ -2,6 +2,7 @@ package com.ArtisticMoves;
 
 import com.ArtisticMoves.DAO.OrderDAO;
 import com.ArtisticMoves.model.Order;
+import com.ArtisticMoves.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,25 +12,31 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "EditOrderServlet")
-public class EditOrderServlet extends HttpServlet {
+@WebServlet("PlaceOrderServlet")
+public class AddOrderServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        int orderId = Integer.parseInt(req.getParameter("orderId"));
-        float orderPrice = Float.parseFloat(req.getParameter("orderPrice"));
+        int porductId = Integer.parseInt(req.getParameter("productId"));
+        float price =Float.parseFloat(req.getParameter("productPrice"));
+            int status = 0;
+        HttpSession session = req.getSession(false);
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            Order order = new Order();
+            order.getOrderId();
+            order.setUserId(user.getId());
+            order.setProductId(porductId);
+            order.setPrice(price);
 
-        Order o = new Order();
-        o.setId(orderId);
-        o.setPrice(orderPrice);
+            status = OrderDAO.insertOrder(order);
+            if (status == 1) {
+//                placed
+            }else {
+                //not placed
+            }
+        }
 
-        int status = OrderDAO.deleteOrder(orderId);
-        if(status==1){
-            resp.sendRedirect();
-        }
-        else{
-            resp.sendRedirect();
-        }
 
     }
 
