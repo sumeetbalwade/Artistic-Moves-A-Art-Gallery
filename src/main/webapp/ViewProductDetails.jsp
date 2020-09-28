@@ -65,7 +65,17 @@
 
             <!-- Product Configuration -->
             <div class="product-configuration">
-                <h3><% p.getQuantity()!= ? %>Quantity : <%=p.getQuantity()%><%:%>Out Of Stock</h3>
+                <%
+                    if (p.getQuantity()==0) {
+
+                %>
+                <h3>Out of Stock</h3>
+
+                <%
+                    } else {%>
+
+                <h3>Quantity : <%=p.getQuantity()%></h3>
+                <%}%>
             </div>
 
             <!-- Product Pricing -->
@@ -73,7 +83,11 @@
                 <span>₹ <%=p.getPrice()%></span>
             </div>
             <div class="buy-section">
-                <a href="PlaceOrderServlet?productId=<%=p.getId()%>&productPrice=<%=p.getPrice()%>" class="cart-btn">Buy Now</a>
+                <form action="PlaceOrderServlet" method="post">
+                    <input value="<%=p.getId()%>" hidden name="productId">
+                    <input value="<%=p.getPrice()%>" hidden name="productPrice">
+                    <button type="submit" class="cart-btn" >Buy Now</button>
+                </form>
             </div>
         </div>
     </div>
