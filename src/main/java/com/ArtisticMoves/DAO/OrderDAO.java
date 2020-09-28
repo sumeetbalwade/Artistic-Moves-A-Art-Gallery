@@ -6,6 +6,7 @@ import com.ArtisticMoves.model.Product;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.Math;
 
 public class OrderDAO {
     public static int insertOrder(Order order){
@@ -69,5 +70,29 @@ public class OrderDAO {
             e.printStackTrace();
         }
         return status;
+    }
+
+
+
+
+
+
+    public static int RandomNumber(String args[]) {
+
+        int rand = (int) Math.floor(Math.random());
+        int status=0;
+               int result = 0;
+        try {
+            Class.forName(Database.driver);
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("select MAX(orderId) as largest FROM order ;");
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()){
+                result = resultSet.getInt("largest");
+            }
+            return result +rand;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
