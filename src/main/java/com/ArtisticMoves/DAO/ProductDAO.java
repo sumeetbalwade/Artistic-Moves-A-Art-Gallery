@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
+import static java.lang.Class.forName;
+
 public class ProductDAO {
 
     //inserting Product
@@ -16,8 +18,8 @@ public class ProductDAO {
         int status = 0;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            Class.forName(Database.driver);
+            Connection con = DriverManager.getConnection(Database.URL , Database.userName ,Database.password);
             PreparedStatement ps = con.prepareStatement("insert into products values (null,?,?,?,?,?,?,?);");
             ps.setInt(1, product.getUserId());
             ps.setString(2, product.getTitle());
@@ -40,7 +42,7 @@ public class ProductDAO {
     public static List<Product> getProduct(int userId) {
         List<Product> productList = new ArrayList<>();
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("select * from products where userId=?;");
             ps.setInt(1, userId);
@@ -70,7 +72,7 @@ public class ProductDAO {
     public static Product getProductFromId(int pId) {
         Product product = new Product();
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("select * from products where id=?;");
             ps.setInt(1, pId);
@@ -96,7 +98,7 @@ public class ProductDAO {
     public static int updateProduct(Product p) {
         int status = 0;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("update products set title= ?,price =?,quantity = ?,content =? where id = ?");
             ps.setString(1, p.getTitle());
@@ -113,10 +115,11 @@ public class ProductDAO {
         return status;
     }
 
+
     public static int deleteProduct(int productId) {
         int status = 0;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("delete from products where id = ?");
             ps.setInt(1, productId);
@@ -157,6 +160,34 @@ public class ProductDAO {
         }
         return img;
 
+    }
+
+    public static List<Product> getAllProduct(){
+        List<Product> productList = new ArrayList<>();
+        try{
+            Class.forName(Database.driver);
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("select * from products");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setUserId(rs.getInt("userId"));
+                product.setTitle(rs.getString("title"));
+                product.setPrice(rs.getFloat("price"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setContent(rs.getString("content"));
+                product.setArtistName(rs.getString("artistName"));
+                product.setProductImage(fetchImage(rs.getBlob("imageProduct")));
+                productList.add(product);
+            }
+            con.close();
+            return productList;
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
     }
 
 }
