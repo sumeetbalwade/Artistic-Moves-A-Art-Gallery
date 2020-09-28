@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.ArtisticMoves.model.Product" %>
+<%@ page import="com.ArtisticMoves.DAO.ProductDAO" %><%--
   Created by IntelliJ IDEA.
   User: sumeet-balwade
   Date: 28-09-2020
@@ -20,13 +21,32 @@
 <body>
 
 
+<%
+
+    if (session.getAttribute("user") == null) {
+        response.sendRedirect("Login.jsp");
+    } else {
+    int id = Integer.parseInt(request.getParameter("productId"));
+    //get product detail from product id
+    Product p = ProductDAO.getProductFromId(id);
+    if (p == null) {
+        response.sendRedirect("ShowProduct.jsp");
+    } else {
+
+%>
+
+
 <main class="container">
     <!-- Left Column / Headphones Image -->
     <div class="left-column">
         <img
                 data-image="red"
                 class="active"
-                src="https://static.toiimg.com/thumb/72975551.cms?width=680&height=512&imgsize=881753"
+                <% if (p.getProductImage() == null) {%>
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png"
+                <%} else {%>
+                src="data:image/jpg;base64,<%=p.getProductImage()%>"
+                <%}%>
                 alt=""
         />
     </div>
@@ -36,23 +56,21 @@
         <div class="right">
             <!-- Product Description -->
             <div class="product-description">
-                <span>Sumeet Balwade</span>
-                <h1>Sans of Art</h1>
+                <span><%=p.getArtistName()%></span>
+                <h1><%=p.getTitle()%></h1>
                 <p>
-                    The preferred choice of a vast range of acclaimed DJs. Punchy,
-                    bass-focused sound and high isolation. Sturdy headband and on-ear
-                    cushions suitable for live performance
+                    <%=p.getContent()%>
                 </p>
             </div>
 
             <!-- Product Configuration -->
             <div class="product-configuration">
-                <h3>Quantity : 10</h3>
+                <h3>Quantity : <%=p.getQuantity()%></h3>
             </div>
 
             <!-- Product Pricing -->
             <div class="product-price">
-                <span>Rs. 240</span>
+                <span>₹ <%=p.getPrice()%></span>
             </div>
             <div class="buy-section">
                 <a href="#" class="cart-btn">Buy Now</a>
@@ -61,6 +79,10 @@
     </div>
 </main>
 
+<%
+    }
+    }
+%>
 <!-- Scripts -->
 <script
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
