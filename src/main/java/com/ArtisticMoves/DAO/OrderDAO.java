@@ -48,8 +48,7 @@ public class OrderDAO {
 
     public static List<Product> getOrderedProduct(int userId) {
 
-        List<Product> n = null;
-        List<Product> products = n;
+        List<Product> products = null;
         try {
             Class.forName(Database.driver);
             Connection connection = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
@@ -60,6 +59,8 @@ public class OrderDAO {
             while (resultSet.next()) {
                 productIdList.add(resultSet.getInt("product_id"));
             }
+            resultSet.close();
+            connection.close();
             products = new ArrayList<>();
             for (int i : productIdList) {
                 products.add(ProductDAO.getProductFromId(i));

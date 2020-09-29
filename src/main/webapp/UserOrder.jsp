@@ -17,11 +17,14 @@
 </head>
 <body>
 <%
-        int userId = Integer.parseInt(request.getParameter("userId"));
-        List<Product> userOrder = (List<Product>) OrderDAO.getOrderedProduct(userId);
-        if (userOrder == null) {
-            response.sendRedirect("Login.jsp");
-        }else{
+    User user = (User) session.getAttribute("user");
+    int userId = user.getId();
+
+
+    List<Product> userOrder = OrderDAO.getOrderedProduct(userId);
+    if (userOrder == null) {
+        response.sendRedirect("Login.jsp");
+    }else{
 
 %>
 <div class="mx-5 my-5 px-5 py-5">
