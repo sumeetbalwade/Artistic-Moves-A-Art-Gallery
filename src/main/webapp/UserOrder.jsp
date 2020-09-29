@@ -17,6 +17,8 @@
 </head>
 <body>
 <%
+
+
     User user = (User) session.getAttribute("user");
     int userId = user.getId();
 

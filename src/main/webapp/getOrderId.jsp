@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.ArtisticMoves.model.User" %><%--
   Created by IntelliJ IDEA.
   User: Sagar
   Date: 28-09-2020
@@ -15,6 +15,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<%
+    if (session.getAttribute("user") == null) {
+        response.sendRedirect("Login.jsp");
+    } else {
+        User user = (User) session.getAttribute("user");
+        if (user.getUserType() == "customer") {
+            response.sendRedirect("userProfile.jsp");
+
+        }
+%>
+
+
 <div class="data-container">
     <h3 class="font-weight-bold mb-4">Artistic Moves</h3>
     <h4 class="font-weight-bold">View Order</h4>
@@ -30,5 +43,7 @@
 
     </form>
 </div>
+
+<% } %>
 </body>
 </html>

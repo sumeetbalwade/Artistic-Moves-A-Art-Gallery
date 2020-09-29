@@ -1,6 +1,7 @@
 <%@ page import="com.ArtisticMoves.model.Product" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.ArtisticMoves.DAO.OrderDAO" %>
+<%@ page import="com.ArtisticMoves.model.User" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -14,11 +15,20 @@
 </head>
 <body>
 <%
-    int orderId = Integer.parseInt((String) request.getAttribute("orderId"));
-    List<Product> userOrder = (List<Product>) OrderDAO.getOrderFromOrderId(orderId);
-    if (userOrder == null) {
+    if (session.getAttribute("user") == null) {
         response.sendRedirect("Login.jsp");
     } else {
+        User user = (User) session.getAttribute("user");
+        if (user.getUserType() == "customer") {
+            response.sendRedirect("userProfile.jsp");
+
+        }
+
+        int orderId = Integer.parseInt((String) request.getAttribute("orderId"));
+        List<Product> userOrder = (List<Product>) OrderDAO.getOrderFromOrderId(orderId);
+        if (userOrder == null) {
+            response.sendRedirect("Login.jsp");
+        } else {
 
 %>
 <div class="mx-5 my-5 px-5 py-5">
@@ -90,7 +100,8 @@
 </div>
 
 
-<% }%>
+<% }
+}%>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
