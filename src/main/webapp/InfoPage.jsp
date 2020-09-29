@@ -43,10 +43,10 @@
             <a class="btn btn-outline-primary btn-lg" href="index.jsp">
                 <i class="fas fa-home"></i> Home</a
             >
-            <a class="btn btn-outline-success btn-lg" href="Register.jsp"
+            <a class="btn btn-outline-success btn-lg" href="ServletRegister"
             ><i class="fas fa-address-book"></i> Register
             </a>
-            <a class="btn btn-outline-danger btn-lg" href="Login.jsp"
+            <a class="btn btn-outline-danger btn-lg" href="Login"
             ><i class="fas fa-sign-in-alt"></i> Login</a
             >
         </div>
