@@ -71,6 +71,39 @@ public class OrderDAO {
 
     }
 
+
+    //get order detail from order id
+    public static List<Product> getOderFromOrderId(int orderId) {
+        List<Product> orders = new ArrayList<>();
+        try {
+            Class.forName(Database.driver);
+            Connection connection = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement preparedStatement = connection.prepareStatement("select * form orders where orderId=?");
+            preparedStatement.setInt(1, orderId);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setUserId(rs.getInt("userId"));
+                product.setTitle(rs.getString("title"));
+                product.setPrice(rs.getFloat("price"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setContent(rs.getString("content"));
+                product.setArtistName(rs.getString("artistName"));
+                // product.setProductImage(fetchImage(rs.getBlob("imageProduct")));
+                orders.add(product);
+            }
+            connection.close();
+            return orders;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return null;
+    }
+
+
     public static int deleteOrder(int orderId) {
         int status = 0;
         try {
