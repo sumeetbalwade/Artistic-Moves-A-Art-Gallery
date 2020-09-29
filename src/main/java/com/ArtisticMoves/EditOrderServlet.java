@@ -24,9 +24,8 @@ public class EditOrderServlet extends HttpServlet {
         o.setPrice(orderPrice);
 
         int status = OrderDAO.deleteOrder(orderId);
-        if(status==1){
-        }
-        else{
+        if (status == 1) {
+        } else {
         }
 
     }
