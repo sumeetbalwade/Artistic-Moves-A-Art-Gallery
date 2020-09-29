@@ -16,12 +16,27 @@ public class OrderDAO {
         try {
             Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
-            PreparedStatement ps = con.prepareStatement("insert into orders values (null,?,?,?,?);");
-            ps.setInt(1, order.getOrderId());
-            ps.setInt(2, order.getUserId());
-            ps.setInt(3, order.getProductId());
-            ps.setFloat(4, order.getPrice());
-            status = ps.executeUpdate();
+            PreparedStatement ps = con.prepareStatement("select quantity from products where id=?;");
+            ps.setInt(1, order.getProductId());
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                int quantity = resultSet.getInt("quantity");
+                if (quantity > 0) {
+
+                    ps = con.prepareStatement("insert into orders values (null,?,?,?,?);");
+                    ps.setInt(1, order.getOrderId());
+                    ps.setInt(2, order.getUserId());
+                    ps.setInt(3, order.getProductId());
+                    ps.setFloat(4, order.getPrice());
+                    status = ps.executeUpdate();
+                    if (status == 1) {
+
+                        ps = con.prepareStatement("update products set quantity = quantity-1 where  id=?;");
+                        ps.setInt(1, order.getProductId());
+                        status = ps.executeUpdate();
+                    }
+                }
+            }
             con.close();
 
         } catch (Exception e) {

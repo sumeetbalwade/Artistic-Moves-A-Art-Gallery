@@ -84,6 +84,11 @@
             <div class="product-price">
                 <span>₹ <%=p.getPrice()%></span>
             </div>
+            <%
+                if (p.getQuantity() != 0) {
+
+            %>
+
             <div class="buy-section">
                 <form action="PlaceOrderServlet" method="post">
                     <input value="<%=p.getId()%>" hidden name="productId">
@@ -91,6 +96,16 @@
                     <button type="submit" class="cart-btn">Buy Now</button>
                 </form>
             </div>
+
+            <%
+            } else {%>
+
+            <div class="buy-section">
+                <a href="userProfile.jsp" class="cart-btn">Profile</a>
+            </div>
+
+            <%}%>
+
         </div>
     </div>
 </main>
