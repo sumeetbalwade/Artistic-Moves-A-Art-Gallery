@@ -1,6 +1,6 @@
-*{
-    padding : 0px;
-    margin : 0px;
+* {
+    padding: 0px;
+    margin: 0px;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 }
 
 
-.data-container{
+.data-container {
     margin: 0 40px 40px 40px;
     padding: 40px;
     border-radius: 0 0 40px 40px;
@@ -26,6 +26,7 @@ body {
     margin: 40px 40px 0 40px;
     padding: 40px;
 }
+
 .navbar {
     padding: 0;
     background-color: #1d2d50;
@@ -66,10 +67,10 @@ ul .nav-item a:hover {
     top: -60px;
 }
 
-.card .content{
+.card .content {
     text-align: center;
 }
 
-.btn{
+.btn {
     width: 100px;
 }

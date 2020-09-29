@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
-import static java.lang.Class.forName;
-
 public class ProductDAO {
 
     //inserting Product
@@ -19,7 +17,7 @@ public class ProductDAO {
 
         try {
             Class.forName(Database.driver);
-            Connection con = DriverManager.getConnection(Database.URL , Database.userName ,Database.password);
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("insert into products values (null,?,?,?,?,?,?,?);");
             ps.setInt(1, product.getUserId());
             ps.setString(2, product.getTitle());
@@ -162,9 +160,9 @@ public class ProductDAO {
 
     }
 
-    public static List<Product> getAllProduct(){
+    public static List<Product> getAllProduct() {
         List<Product> productList = new ArrayList<>();
-        try{
+        try {
             Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("select * from products");
@@ -184,7 +182,7 @@ public class ProductDAO {
             con.close();
             return productList;
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
