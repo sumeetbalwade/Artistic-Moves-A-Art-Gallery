@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
@@ -11,7 +11,7 @@ body {
     background-attachment: fixed;
 }
 
-.data-container{
+.data-container {
     color: white;
     background-color: black;
     max-width: 500px;
@@ -22,7 +22,7 @@ body {
     text-align: center;
 }
 
-input,a{
+input, a {
     max-width: 300px;
     margin: 10px auto;
 }
