@@ -68,7 +68,6 @@
                         <% } %>
 
 
-<%--                        if user then it show Your order--%>
                         <% if(user.getUserType().equals("user")){%>
                         <a href="UserOrder.jsp?userId = <%=user.getId()%>">
                             <div class="sidebar-card">
@@ -76,7 +75,6 @@
                             </div>
                         </a>
                         <%}
-//                        for admin
                         else{%>
                         <a href="getOrderId.jsp">
                             <div class="sidebar-card">
