@@ -68,8 +68,8 @@
                         <% } %>
 
 
-                        <% if (user.getUserType().equals("user")) {%>
-                        <a href="UserOrder.jsp?userId = <%=user.getId()%>">
+                        <% if (user.getUserType().equals("customer")) {%>
+                        <a href="UserOrder.jsp">
                             <div class="sidebar-card">
                                 <i class="fad fa-bags-shopping"></i> Your Order
                             </div>
