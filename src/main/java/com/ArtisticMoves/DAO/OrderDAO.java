@@ -75,30 +75,30 @@ public class OrderDAO {
 
     //get order detail from order id
     public static List<Product> getOrderFromOrderId(int orderId) {
-        List<Product> orders = new ArrayList<>();
+
         try {
             Class.forName(Database.driver);
             Connection connection = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
-            PreparedStatement preparedStatement = connection.prepareStatement("select * form orders where order_id=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select product_id from orders where order_id=?");
             preparedStatement.setInt(1, orderId);
-            ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()) {
-                Product product = new Product();
-                product.setId(rs.getInt("id"));
-                product.setUserId(rs.getInt("userId"));
-                product.setTitle(rs.getString("title"));
-                product.setPrice(rs.getFloat("price"));
-                product.setQuantity(rs.getInt("quantity"));
-                product.setContent(rs.getString("content"));
-                product.setArtistName(rs.getString("artistName"));
-                // product.setProductImage(fetchImage(rs.getBlob("imageProduct")));
-                orders.add(product);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Integer> productIdList = new ArrayList<>();
+            while (resultSet.next()) {
+                productIdList.add(resultSet.getInt("product_id"));
+            }
+            resultSet.close();
+            connection.close();
+            List<Product> orders = new ArrayList<>();
+            for (int i : productIdList) {
+                orders.add(ProductDAO.getProductFromId(i));
             }
             connection.close();
             return orders;
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return null;

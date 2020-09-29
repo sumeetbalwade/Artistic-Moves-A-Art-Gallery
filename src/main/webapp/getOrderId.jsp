@@ -18,12 +18,17 @@
 <div class="data-container">
     <h3 class="font-weight-bold mb-4">Artistic Moves</h3>
     <h4 class="font-weight-bold">View Order</h4>
-    <div>
-        <input type="text" class="form-control" name="orderId" placeholder="Enter Order Id">
-    </div>
-    <div>
-        <a href="OrderDataFromOrderId.jsp" class="btn btn-primary">View Order</a>
-    </div>
+
+    <form action="findOrderServlet" method="post">
+
+        <div>
+            <input type="text" class="form-control" name="orderId" placeholder="Enter Order Id">
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">View Order</button>
+        </div>
+
+    </form>
 </div>
 </body>
 </html>

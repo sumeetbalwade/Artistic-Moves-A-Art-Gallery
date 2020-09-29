@@ -14,7 +14,7 @@
 </head>
 <body>
 <%
-    int orderId = Integer.parseInt(request.getParameter("orderId"));
+    int orderId = Integer.parseInt((String) request.getAttribute("orderId"));
     List<Product> userOrder = (List<Product>) OrderDAO.getOrderFromOrderId(orderId);
     if (userOrder == null) {
         response.sendRedirect("Login.jsp");

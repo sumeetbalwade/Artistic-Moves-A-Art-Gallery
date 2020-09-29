@@ -68,17 +68,16 @@
                         <% } %>
 
 
-                        <% if(user.getUserType().equals("user")){%>
+                        <% if (user.getUserType().equals("user")) {%>
                         <a href="UserOrder.jsp?userId = <%=user.getId()%>">
                             <div class="sidebar-card">
-                                Your Order
+                                <i class="fad fa-bags-shopping"></i> Your Order
                             </div>
                         </a>
-                        <%}
-                        else{%>
+                        <%} else {%>
                         <a href="getOrderId.jsp">
                             <div class="sidebar-card">
-                                Search By Order Id
+                                <i class="fab fa-jedi-order"></i> Find Order
                             </div>
                         </a>
                         <% } %>

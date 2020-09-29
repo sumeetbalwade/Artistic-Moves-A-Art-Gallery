@@ -141,6 +141,18 @@
         <url-pattern>/PlaceOrderServlet</url-pattern>
     </servlet-mapping>
 
+    <!--    PlaceOrderServlet Servlet    -->
+    <servlet>
+        <description></description>
+        <display-name>findOrderServlet</display-name>
+        <servlet-name>findOrderServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.findOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>findOrderServlet</servlet-name>
+        <url-pattern>/findOrderServlet</url-pattern>
+    </servlet-mapping>
+
     <!--    Delete Order Servlet    -->
 
     <servlet>
