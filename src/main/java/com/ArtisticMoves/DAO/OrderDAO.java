@@ -56,14 +56,21 @@ public class OrderDAO {
             preparedStatement.setInt(1, userId);
             ResultSet resultSet = preparedStatement.executeQuery();
             List<Integer> productIdList = new ArrayList<>();
+            List<Integer> productOrderIdList = new ArrayList<>();
             while (resultSet.next()) {
                 productIdList.add(resultSet.getInt("product_id"));
+                productOrderIdList.add(resultSet.getInt("order_id"));
             }
             resultSet.close();
             connection.close();
             products = new ArrayList<>();
             for (int i : productIdList) {
                 products.add(ProductDAO.getProductFromId(i));
+            }
+
+            for (int i = 0; i < products.size(); i++) {
+
+                products.get(i).setOrderId(productOrderIdList.get(i));
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -24,7 +24,7 @@
     List<Product> userOrder = OrderDAO.getOrderedProduct(userId);
     if (userOrder == null) {
         response.sendRedirect("Login.jsp");
-    }else{
+    } else {
 
 %>
 <div class="mx-5 my-5 px-5 py-5">
@@ -84,7 +84,7 @@
                                 Price : &#8377; <%=p.getPrice()%>
                             </div>
                             <!-- Product Quantity -->
-                            Quantity : <%=p.getQuantity()%>
+                            OrderId : <%=p.getOrderId()%>
                         </div>
                     </div>
                 </div>
