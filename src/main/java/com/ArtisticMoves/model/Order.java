@@ -2,7 +2,7 @@ package com.ArtisticMoves.model;
 
 public class Order {
     private int id;
-    private int orderId,userId,productId;
+    private int orderId, userId, productId;
     private float price;
 
     public int getId() {

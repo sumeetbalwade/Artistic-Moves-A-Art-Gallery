@@ -15,7 +15,7 @@
             rel="stylesheet"
     />
 
-    <link href="${pageContext.request.contextPath}/css/ViewProductDetails.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/css/ViewProductDetails.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -26,12 +26,12 @@
     if (session.getAttribute("user") == null) {
         response.sendRedirect("Login.jsp");
     } else {
-    int id = Integer.parseInt(request.getParameter("productId"));
-    //get product detail from product id
-    Product p = ProductDAO.getProductFromId(id);
-    if (p == null) {
-        response.sendRedirect("ShowProduct.jsp");
-    } else {
+        int id = Integer.parseInt(request.getParameter("productId"));
+        //get product detail from product id
+        Product p = ProductDAO.getProductFromId(id);
+        if (p == null) {
+            response.sendRedirect("ShowProduct.jsp");
+        } else {
 
 %>
 
@@ -57,7 +57,8 @@
             <!-- Product Description -->
             <div class="product-description">
                 <span><%=p.getArtistName()%></span>
-                <h1><%=p.getTitle()%></h1>
+                <h1><%=p.getTitle()%>
+                </h1>
                 <p>
                     <%=p.getContent()%>
                 </p>
@@ -65,22 +66,52 @@
 
             <!-- Product Configuration -->
             <div class="product-configuration">
-                <h3>Quantity : <%=p.getQuantity()%></h3>
+                <%
+                    if (p.getQuantity() == 0) {
+
+                %>
+                <h3>Out of Stock</h3>
+
+                <%
+                } else {%>
+
+                <h3>Quantity : <%=p.getQuantity()%>
+                </h3>
+                <%}%>
             </div>
 
             <!-- Product Pricing -->
             <div class="product-price">
                 <span>₹ <%=p.getPrice()%></span>
             </div>
+            <%
+                if (p.getQuantity() != 0) {
+
+            %>
+
             <div class="buy-section">
-                <a href="PlaceOrderServlet?productId=<%=p.getId()%>&productPrice=<%=p.getPrice()%>" class="cart-btn">Buy Now</a>
+                <form action="PlaceOrderServlet" method="post">
+                    <input value="<%=p.getId()%>" hidden name="productId">
+                    <input value="<%=p.getPrice()%>" hidden name="productPrice">
+                    <button type="submit" class="cart-btn">Buy Now</button>
+                </form>
             </div>
+
+            <%
+            } else {%>
+
+            <div class="buy-section">
+                <a href="userProfile.jsp" class="cart-btn">Profile</a>
+            </div>
+
+            <%}%>
+
         </div>
     </div>
 </main>
 
 <%
-    }
+        }
     }
 %>
 <!-- Scripts -->
