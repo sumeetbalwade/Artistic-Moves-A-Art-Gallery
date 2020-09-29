@@ -73,12 +73,12 @@ public class OrderDAO {
 
 
     //get order detail from order id
-    public static List<Product> getOderFromOrderId(int orderId) {
+    public static List<Product> getOrderFromOrderId(int orderId) {
         List<Product> orders = new ArrayList<>();
         try {
             Class.forName(Database.driver);
             Connection connection = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
-            PreparedStatement preparedStatement = connection.prepareStatement("select * form orders where orderId=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * form orders where order_id=?");
             preparedStatement.setInt(1, orderId);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {

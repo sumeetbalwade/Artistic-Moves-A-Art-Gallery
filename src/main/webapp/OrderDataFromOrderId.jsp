@@ -15,10 +15,10 @@
 <body>
 <%
     int orderId = Integer.parseInt(request.getParameter("orderId"));
-    List<Product> userOrder = (List<Product>) OrderDAO.getOderFromOrderId(orderId);
+    List<Product> userOrder = (List<Product>) OrderDAO.getOrderFromOrderId(orderId);
     if (userOrder == null) {
         response.sendRedirect("Login.jsp");
-    }else{
+    } else {
 
 %>
 <div class="mx-5 my-5 px-5 py-5">
