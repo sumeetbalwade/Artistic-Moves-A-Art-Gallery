@@ -165,6 +165,21 @@
         <servlet-name>DeleteOrderServlet</servlet-name>
         <url-pattern>/DeleteOrderServlet</url-pattern>
     </servlet-mapping>
+    <!--    AddtoCartServlet Servlet    -->
+
+    <servlet>
+        <description></description>
+        <display-name>AddtoCartServlet</display-name>
+        <servlet-name>AddtoCartServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.AddtoCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddtoCartServlet</servlet-name>
+        <url-pattern>/AddtoCartServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--    EditOrderServlet Servlet    -->
     <servlet>
         <description>EditOrderServlet</description>
         <display-name>EditOrderServlet</display-name>
