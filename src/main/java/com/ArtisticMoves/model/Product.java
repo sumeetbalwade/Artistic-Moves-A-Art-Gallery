@@ -5,8 +5,16 @@ import java.io.InputStream;
 public class Product {
     private String title, content, artistName, productImage;
     private InputStream tempPic;
-    private int id, quantity, userId;
+    private int id, quantity, userId, orderId;
     private float price;
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
 
     public String getTitle() {
         return title;

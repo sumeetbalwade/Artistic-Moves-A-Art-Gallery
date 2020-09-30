@@ -48,8 +48,7 @@ public class OrderDAO {
 
     public static List<Product> getOrderedProduct(int userId) {
 
-        List<Product> n = null;
-        List<Product> products = n;
+        List<Product> products = null;
         try {
             Class.forName(Database.driver);
             Connection connection = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
@@ -57,12 +56,21 @@ public class OrderDAO {
             preparedStatement.setInt(1, userId);
             ResultSet resultSet = preparedStatement.executeQuery();
             List<Integer> productIdList = new ArrayList<>();
+            List<Integer> productOrderIdList = new ArrayList<>();
             while (resultSet.next()) {
                 productIdList.add(resultSet.getInt("product_id"));
+                productOrderIdList.add(resultSet.getInt("order_id"));
             }
+            resultSet.close();
+            connection.close();
             products = new ArrayList<>();
             for (int i : productIdList) {
                 products.add(ProductDAO.getProductFromId(i));
+            }
+
+            for (int i = 0; i < products.size(); i++) {
+
+                products.get(i).setOrderId(productOrderIdList.get(i));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,6 +78,39 @@ public class OrderDAO {
         return products;
 
     }
+
+
+    //get order detail from order id
+    public static List<Product> getOrderFromOrderId(int orderId) {
+
+        try {
+            Class.forName(Database.driver);
+            Connection connection = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement preparedStatement = connection.prepareStatement("select product_id from orders where order_id=?");
+            preparedStatement.setInt(1, orderId);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Integer> productIdList = new ArrayList<>();
+            while (resultSet.next()) {
+                productIdList.add(resultSet.getInt("product_id"));
+            }
+            resultSet.close();
+            connection.close();
+            List<Product> orders = new ArrayList<>();
+            for (int i : productIdList) {
+                orders.add(ProductDAO.getProductFromId(i));
+            }
+            connection.close();
+            return orders;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 
     public static int deleteOrder(int orderId) {
         int status = 0;

@@ -18,10 +18,14 @@
 </head>
 <body>
 <%
-    List<Product> productList = ProductDAO.getAllProduct();
-    if (productList == null) {
-        response.sendRedirect("index.jsp");
+
+    if (session.getAttribute("user") == null) {
+        response.sendRedirect("Login.jsp");
     } else {
+        List<Product> productList = ProductDAO.getAllProduct();
+        if (productList == null) {
+            response.sendRedirect("index.jsp");
+        } else {
 %>
 <nav class="navbar navbar-expand-lg nav-container ">
     <button class="navbar-toggler navbar-dark"
@@ -75,7 +79,10 @@
         <%} %>
     </div>
 </div>
-<%} %>
+<%
+        }
+    }
+%>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

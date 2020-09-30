@@ -66,6 +66,23 @@
                             </div>
                         </a>
                         <% } %>
+
+
+                        <% if (user.getUserType().equals("customer")) {%>
+                        <a href="UserOrder.jsp">
+                            <div class="sidebar-card">
+                                <i class="fad fa-bags-shopping"></i> Your Order
+                            </div>
+                        </a>
+                        <%} else {%>
+                        <a href="getOrderId.jsp">
+                            <div class="sidebar-card">
+                                <i class="fab fa-jedi-order"></i> Find Order
+                            </div>
+                        </a>
+                        <% } %>
+
+
                         <a href="changeAvatar.jsp">
                             <div class="sidebar-card">
                                 <i class="fas fa-user-tie"></i>Change Avatar
