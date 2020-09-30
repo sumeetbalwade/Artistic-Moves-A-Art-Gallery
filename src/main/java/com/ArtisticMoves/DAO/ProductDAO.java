@@ -188,4 +188,32 @@ public class ProductDAO {
         return null;
     }
 
+    public static List<Product> getLatestProduct() {
+        List<Product> productList = new ArrayList<>();
+        try {
+            Class.forName(Database.driver);
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("select * from products order by id desc limit 3;");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setUserId(rs.getInt("userId"));
+                product.setTitle(rs.getString("title"));
+                product.setPrice(rs.getFloat("price"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setContent(rs.getString("content"));
+                product.setArtistName(rs.getString("artistName"));
+                product.setProductImage(fetchImage(rs.getBlob("imageProduct")));
+                productList.add(product);
+            }
+            con.close();
+            return productList;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
 }
