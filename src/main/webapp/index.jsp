@@ -1,6 +1,7 @@
 <%@ page import="com.ArtisticMoves.model.Product" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.ArtisticMoves.DAO.ProductDAO" %>
+<%@ page import="com.ArtisticMoves.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -19,7 +20,9 @@
 %>
 <section id="main-container">
     <div id="brand-container">
-        <h1>ARTISTIC MOVES</h1><h4>A ART GALLERY</h4>
+        <a href="index.jsp">
+            <h1>ARTISTIC MOVES</h1><h4>A ART GALLERY</h4>
+        </a>
     </div>
 
     <div id="navbar-container">
@@ -35,11 +38,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav container d-flex justify-content-around">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.jsp">Home</a>
-                    </li>
+                    <%
+                        User user = (User) session.getAttribute("user");
+                    %>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Buy Arts</a>
+                        <a class="nav-link" href="ShowProduct.jsp">Buy Arts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">About</a>
@@ -47,9 +50,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Contact Us</a>
                     </li>
+                    <%
+                        if (user == null){
+                    %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Register.jsp">Register</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Login.jsp">Log In</a>
                     </li>
+                    <%
+                        }else{
+                    %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="userProfile.jsp">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="userProfile.jsp">Log Out</a>
+                    </li>
+                    <%}%>
                 </ul>
             </div>
         </nav>
@@ -83,13 +105,13 @@
             <div class="col-md-4">
                 <h6 class="ml-3">Follow Us</h6>
                 <a href="">
-                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i>
                 </a>
                 <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-lg fa-instagram" aria-hidden="true"></i>
                 </a>
                 <a href="">
-                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i>
                 </a>
             </div>
         </div>

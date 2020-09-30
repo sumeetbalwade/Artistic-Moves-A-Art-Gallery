@@ -11,17 +11,21 @@ body{
 
 #main-container{
     margin: 50px 100px;
-    padding: 20px;
+    padding: 20px 0;
     border-radius: 40px;
     background-color: white;
 
 }
 
 #brand-container{
-    margin: 10px 10px 0px 10px;
+    margin: 10px 10px 0px 30px;
     color: white;
     border-radius: 40px;
+    font-family: 'Lobster', cursive;
+}
 
+#brand-container a{
+    text-decoration: none;
 }
 
 #brand-container h1,#brand-container h4{
@@ -31,14 +35,14 @@ body{
 #navbar-container{
     color: white;
     background-color: black;
-    margin: 20px 10px 5px 10px;
+    margin: 20px 0 0 0;
 }
 
 #middle-container{
     text-align: center;
     color: white;
     background-color: white;
-    margin: 5px 10px;
+    margin: 0 0 5px 0;
     padding: 50px 80px;
     font-family: 'Lobster', cursive;
     font-size: 35px;
@@ -77,6 +81,9 @@ nav a:hover{
 #images-container img{
     border-radius: 40px;
     padding: 10px 5px;
+    width: auto;
+    height: auto;
+
 }
 
 #footer-container{
