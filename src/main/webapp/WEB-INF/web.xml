@@ -191,4 +191,16 @@
         <url-pattern>/EditOrderServlet</url-pattern>
     </servlet-mapping>
 
+    <!--    RemoveFromCartServlet Servlet    -->
+    <servlet>
+        <description>RemoveFromCartServlet</description>
+        <display-name>RemoveFromCartServlet</display-name>
+        <servlet-name>RemoveFromCartServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.RemoveFromCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RemoveFromCartServlet</servlet-name>
+        <url-pattern>/RemoveFromCartServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>

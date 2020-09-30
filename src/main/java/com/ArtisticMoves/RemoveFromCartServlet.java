@@ -1,5 +1,6 @@
 package com.ArtisticMoves;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,21 +10,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "AddtoCartServlet")
-public class AddtoCartServlet extends HttpServlet {
+@WebServlet(name = "RemoveFromCartServlet")
+public class RemoveFromCartServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession s = request.getSession(false);
         int productId = 0;
         if (s.getAttribute("user") != null) {
             List<Integer> cart = (List<Integer>) s.getAttribute("cart");
-            if (cart == null){
-                cart = new ArrayList<>();
+            List<Integer> newCart = new ArrayList<>();
+
+            for (int i : cart) {
+                if (i != productId) {
+                    newCart.add(i);
+                }
             }
-            cart.add(productId);
-            s.setAttribute("cart",cart);
+            s.setAttribute("cart",newCart);
         } else {
             response.sendRedirect("Login.jsp");
         }
+    }
     }
 }
