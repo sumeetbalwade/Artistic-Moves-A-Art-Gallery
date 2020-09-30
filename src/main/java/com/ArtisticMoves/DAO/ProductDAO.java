@@ -93,6 +93,26 @@ public class ProductDAO {
         return null;
     }
 
+    //Get productPrice from product id
+    public static float getProductPriceFromId(int pId) {
+        float price = 0;
+        try {
+            Class.forName(Database.driver);
+            Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
+            PreparedStatement ps = con.prepareStatement("select price from products where id=?;");
+            ps.setInt(1, pId);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                price = rs.getFloat("price");
+            }
+            con.close();
+            return price;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public static int updateProduct(Product p) {
         int status = 0;
         try {

@@ -23,15 +23,12 @@
 
 <%
 
-    if (session.getAttribute("user") == null) {
-        response.sendRedirect("Login.jsp");
+    int id = Integer.parseInt(request.getParameter("productId"));
+    //get product detail from product id
+    Product p = ProductDAO.getProductFromId(id);
+    if (p == null) {
+        response.sendRedirect("ShowProduct.jsp");
     } else {
-        int id = Integer.parseInt(request.getParameter("productId"));
-        //get product detail from product id
-        Product p = ProductDAO.getProductFromId(id);
-        if (p == null) {
-            response.sendRedirect("ShowProduct.jsp");
-        } else {
 
 %>
 
@@ -90,11 +87,16 @@
             %>
 
             <div class="buy-section">
-                <form action="PlaceOrderServlet" method="post">
+                <form action="AddtoCartServlet" method="post" style="display: inline;">
+                    <input value="<%=p.getId()%>" hidden name="productId">
+                    <button type="submit" class="cart-btn">Add to Cart</button>
+                </form>
+                <form action="PlaceOrderServlet" method="post" style="display: inline;">
                     <input value="<%=p.getId()%>" hidden name="productId">
                     <input value="<%=p.getPrice()%>" hidden name="productPrice">
                     <button type="submit" class="cart-btn">Buy Now</button>
                 </form>
+
             </div>
 
             <%
@@ -111,7 +113,6 @@
 </main>
 
 <%
-        }
     }
 %>
 <!-- Scripts -->
