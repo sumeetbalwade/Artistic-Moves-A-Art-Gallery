@@ -203,4 +203,16 @@
         <url-pattern>/RemoveFromCartServlet</url-pattern>
     </servlet-mapping>
 
+    <!--    PlaceCartOrderServlet Servlet    -->
+    <servlet>
+        <description>PlaceCartOrderServlet</description>
+        <display-name>PlaceCartOrderServlet</display-name>
+        <servlet-name>PlaceCartOrderServlet</servlet-name>
+        <servlet-class>com.ArtisticMoves.PlaceCartOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PlaceCartOrderServlet</servlet-name>
+        <url-pattern>/PlaceCartOrderServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>

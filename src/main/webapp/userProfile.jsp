@@ -56,7 +56,7 @@
                         </a>
                         <a href="ViewProduct.jsp">
                             <div class="sidebar-card">
-                                <i class="fas fa-gifts"></i>View Products
+                                <i class="fas fa-gifts"></i>Your Products
                             </div>
                         </a>
                         <% if (user.getUserType().equals("admin")) { %>
@@ -71,7 +71,7 @@
                         <% if (user.getUserType().equals("customer")) {%>
                         <a href="UserOrder.jsp">
                             <div class="sidebar-card">
-                                <i class="fad fa-bags-shopping"></i> Your Order
+                                <i class="fab fa-first-order"></i> Your Order
                             </div>
                         </a>
                         <%} else {%>

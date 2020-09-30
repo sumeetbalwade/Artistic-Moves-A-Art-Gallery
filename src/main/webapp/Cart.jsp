@@ -73,7 +73,7 @@
          style="color: white;text-align: center;justify-content: center;margin: 1.5rem 0 2.5rem 0; align-items: center">
         <h2 style="margin-right: 6vw">Total : <%=totalPrice%>
         </h2>
-        <a href="" style="width: auto" class="btn btn-primary btn-lg m-2">Place Order</a>
+        <a href="PlaceCartOrderServlet" style="width: auto" class="btn btn-primary btn-lg m-2">Place Order</a>
     </div>
     <div class="row">
         <% for (Product p : productList) {%>
