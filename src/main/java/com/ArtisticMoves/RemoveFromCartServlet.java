@@ -13,23 +13,26 @@ import java.util.List;
 @WebServlet(name = "RemoveFromCartServlet")
 public class RemoveFromCartServlet extends HttpServlet {
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession s = request.getSession(false);
-        int productId = 0;
-        if (s.getAttribute("user") != null) {
-            List<Integer> cart = (List<Integer>) s.getAttribute("cart");
-            List<Integer> newCart = new ArrayList<>();
 
-            for (int i : cart) {
-                if (i != productId) {
-                    newCart.add(i);
-                }
-            }
-            s.setAttribute("cart",newCart);
+        HttpSession s = request.getSession(false);
+        if (s.getAttribute("user") != null) {
+            response.sendRedirect("userProfile.jsp");
         } else {
             response.sendRedirect("Login.jsp");
         }
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession s = request.getSession(false);
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        if (s.getAttribute("user") != null) {
+            List<Integer> cart = (List<Integer>) s.getAttribute("cart");
+            cart.remove(new Integer(productId));
+            s.setAttribute("cart",cart);
+            response.sendRedirect("Cart.jsp");
+        } else {
+            response.sendRedirect("Login.jsp");
+        }
     }
 }

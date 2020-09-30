@@ -14,6 +14,13 @@ body {
 }
 
 
+.heading{
+    color: white;
+}
+
+form{
+    display: inline;
+}
 .data-container {
     margin: 0 40px 40px 40px;
     padding: 40px;

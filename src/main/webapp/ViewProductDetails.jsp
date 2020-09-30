@@ -90,11 +90,16 @@
             %>
 
             <div class="buy-section">
-                <form action="PlaceOrderServlet" method="post">
+                <form action="AddtoCartServlet" method="post" style="display: inline;">
+                    <input value="<%=p.getId()%>" hidden name="productId">
+                    <button type="submit" class="cart-btn">Add to Cart</button>
+                </form>
+                <form action="PlaceOrderServlet" method="post" style="display: inline;">
                     <input value="<%=p.getId()%>" hidden name="productId">
                     <input value="<%=p.getPrice()%>" hidden name="productPrice">
                     <button type="submit" class="cart-btn">Buy Now</button>
                 </form>
+
             </div>
 
             <%

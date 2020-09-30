@@ -26,7 +26,7 @@
         List<Integer> CartProduct = (List<Integer>) session.getAttribute("cart");
         if (CartProduct == null) {
             response.sendRedirect("index.jsp");
-        }
+        }else{
 
         List<Product> productList = new ArrayList<>();
         for (int i:CartProduct ) {
@@ -62,8 +62,8 @@
         </ul>
     </div>
 </nav>
-<H1>Your Cart</H1>
 <div class="data-container">
+<H1 class="heading" style="color: white">Your Cart</H1>
     <div class="row">
         <% for (Product p : productList) {%>
         <div class="col-xl-4 col-md-12 my-4">
@@ -83,7 +83,12 @@
                         <%=p.getTitle()%>
                     </h3>
                     <div class="btn-row">
-                        <a href="ViewProductDetails.jsp?productId=<%=p.getId()%>" class="btn btn-primary m-2">View</a>
+                        <form action="RemoveFromCartServlet" method="post" style="display: inline">
+                            <input value="<%=p.getId()%>" hidden name="productId">
+                            <button type="submit" class="btn btn-primary m-2">Remove</button>
+                        </form>
+
+                        <a href="ViewProductDetails.jsp?productId=<%=p.getId()%>" style="display: inline" class="btn btn-primary m-2">View</a>
                     </div>
                 </div>
             </div>
@@ -92,6 +97,7 @@
     </div>
 </div>
 <%
+            }
         }
     }
 %>

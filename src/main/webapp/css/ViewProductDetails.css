@@ -251,3 +251,7 @@ h3 {
     color: #ecf4f3;
     font-weight: 400;
 }
+
+form-btn{
+    display: inline;
+}
