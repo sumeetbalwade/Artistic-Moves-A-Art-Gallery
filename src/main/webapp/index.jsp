@@ -48,7 +48,7 @@
                         <a class="nav-link" href="">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Log In</a>
+                        <a class="nav-link" href="Login.jsp">Log In</a>
                     </li>
                 </ul>
             </div>
