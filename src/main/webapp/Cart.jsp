@@ -64,6 +64,17 @@
 </nav>
 <div class="data-container">
     <H1 class="heading" style="color: white">Your Cart</H1>
+    <% float totalPrice = 0;
+        for (Product p : productList) {
+            totalPrice = totalPrice + p.getPrice();
+        }
+    %>
+    <div class="row"
+         style="color: white;text-align: center;justify-content: center;margin: 1.5rem 0 2.5rem 0; align-items: center">
+        <h2 style="margin-right: 6vw">Total : <%=totalPrice%>
+        </h2>
+        <a href="" style="width: auto" class="btn btn-primary btn-lg m-2">Place Order</a>
+    </div>
     <div class="row">
         <% for (Product p : productList) {%>
         <div class="col-xl-4 col-md-12 my-4">
