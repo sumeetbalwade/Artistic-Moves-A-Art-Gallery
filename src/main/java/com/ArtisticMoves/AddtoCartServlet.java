@@ -14,18 +14,18 @@ import java.util.List;
 @WebServlet(name = "AddtoCartServlet")
 public class AddtoCartServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession s = request.getSession(false);
         int productId = Integer.parseInt(request.getParameter("productId"));
         if (s.getAttribute("user") != null) {
             List<Integer> cart = (List<Integer>) s.getAttribute("cart");
-            if (cart == null){
+            if (cart == null) {
                 cart = new ArrayList<>();
             }
             cart.add(productId);
-            s.setAttribute("cart",cart);
+            s.setAttribute("cart", cart);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("Cart.jsp");
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
 
         } else {
             response.sendRedirect("Login.jsp");

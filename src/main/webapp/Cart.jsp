@@ -26,17 +26,17 @@
         List<Integer> CartProduct = (List<Integer>) session.getAttribute("cart");
         if (CartProduct == null) {
             response.sendRedirect("index.jsp");
-        }else{
-
-        List<Product> productList = new ArrayList<>();
-        for (int i:CartProduct ) {
-            productList.add(ProductDAO.getProductFromId(i));
-        }
-
-
-        if (productList == null) {
-            response.sendRedirect("index.jsp");
         } else {
+
+            List<Product> productList = new ArrayList<>();
+            for (int i : CartProduct) {
+                productList.add(ProductDAO.getProductFromId(i));
+            }
+
+
+            if (productList == null) {
+                response.sendRedirect("index.jsp");
+            } else {
 %>
 <nav class="navbar navbar-expand-lg nav-container ">
     <button class="navbar-toggler navbar-dark"
@@ -63,7 +63,7 @@
     </div>
 </nav>
 <div class="data-container">
-<H1 class="heading" style="color: white">Your Cart</H1>
+    <H1 class="heading" style="color: white">Your Cart</H1>
     <div class="row">
         <% for (Product p : productList) {%>
         <div class="col-xl-4 col-md-12 my-4">
@@ -88,7 +88,8 @@
                             <button type="submit" class="btn btn-primary m-2">Remove</button>
                         </form>
 
-                        <a href="ViewProductDetails.jsp?productId=<%=p.getId()%>" style="display: inline" class="btn btn-primary m-2">View</a>
+                        <a href="ViewProductDetails.jsp?productId=<%=p.getId()%>" style="display: inline"
+                           class="btn btn-primary m-2">View</a>
                     </div>
                 </div>
             </div>

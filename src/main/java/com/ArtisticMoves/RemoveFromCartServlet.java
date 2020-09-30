@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "RemoveFromCartServlet")
@@ -29,7 +28,7 @@ public class RemoveFromCartServlet extends HttpServlet {
         if (s.getAttribute("user") != null) {
             List<Integer> cart = (List<Integer>) s.getAttribute("cart");
             cart.remove(new Integer(productId));
-            s.setAttribute("cart",cart);
+            s.setAttribute("cart", cart);
             response.sendRedirect("Cart.jsp");
         } else {
             response.sendRedirect("Login.jsp");
