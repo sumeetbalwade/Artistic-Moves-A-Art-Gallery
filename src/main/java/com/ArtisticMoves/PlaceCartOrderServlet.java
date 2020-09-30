@@ -40,11 +40,15 @@ public class PlaceCartOrderServlet extends HttpServlet {
                     status = OrderDAO.insertOrder(order);
                     if (status == 0) {
                         request.setAttribute("data", "Order Unsuccessful");
+
                         RequestDispatcher requestDispatcher = request.getRequestDispatcher("InfoPage.jsp");
                         requestDispatcher.forward(request, response);
                     }
+                    products.remove(new Integer(i));
                 }
 
+                products.clear();
+                session.setAttribute("cart", products);
                 request.setAttribute("data", "Order Successful");
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("InfoPage.jsp");
                 requestDispatcher.forward(request, response);

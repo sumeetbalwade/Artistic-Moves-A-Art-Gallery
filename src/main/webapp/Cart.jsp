@@ -24,7 +24,7 @@
         response.sendRedirect("Login.jsp");
     } else {
         List<Integer> CartProduct = (List<Integer>) session.getAttribute("cart");
-        if (CartProduct == null) {
+        if (CartProduct == null || CartProduct.size() == 0) {
             response.sendRedirect("index.jsp");
         } else {
 

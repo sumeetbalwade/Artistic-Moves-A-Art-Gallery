@@ -37,7 +37,7 @@
 %>
 <div class="container main-section">
     <div class="status">
-        <h1><%=data%>
+        <h1 style="text-align: center;"><%=data%>
         </h1>
         <div class="buttons">
             <a class="btn btn-outline-primary btn-lg" href="index.jsp">
