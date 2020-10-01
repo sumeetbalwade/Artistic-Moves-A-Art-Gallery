@@ -16,7 +16,8 @@
     />
 
     <link href="${pageContext.request.contextPath}/css/ViewProductDetails.css" rel="stylesheet"/>
-    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230"
+          type="image/x-icon">
 
 </head>
 <body>

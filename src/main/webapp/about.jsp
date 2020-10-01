@@ -17,7 +17,8 @@
           rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/about.css"/>
-    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230"
+          type="image/x-icon">
 
 </head>
 <body>
@@ -83,7 +84,8 @@
         <div class="row">
             <div class="col-md-3  col-xs-6">
                 <div class="card">
-                    <img src="https://images.pexels.com/photos/5489404/pexels-photo-5489404.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489404.jpg&fm=jpg" alt="" class="card-img-top">
+                    <img src="https://images.pexels.com/photos/5489404/pexels-photo-5489404.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489404.jpg&fm=jpg"
+                         alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Sumeet Balwade</h6>
                         <a href="https://www.facebook.com/sumeet.balwade">
@@ -100,7 +102,8 @@
             </div>
             <div class="col-md-3  col-xs-6">
                 <div class="card">
-                    <img src="https://images.pexels.com/photos/5489445/pexels-photo-5489445.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489445.jpg&fm=jpg" alt="" class="card-img-top">
+                    <img src="https://images.pexels.com/photos/5489445/pexels-photo-5489445.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489445.jpg&fm=jpg"
+                         alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Sagar Mahajan</h6>
                         <a href="https://www.facebook.com/saggyy1918117">
@@ -117,7 +120,8 @@
             </div>
             <div class="col-md-3  col-xs-6">
                 <div class="card">
-                    <img src="https://images.pexels.com/photos/5489692/pexels-photo-5489692.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="card-img-top">
+                    <img src="https://images.pexels.com/photos/5489692/pexels-photo-5489692.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                         alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Deepak Mali</h6>
                         <a href="https://www.facebook.com/deepak.m.mali.7/">
@@ -134,7 +138,8 @@
             </div>
             <div class="col-md-3  col-xs-6">
                 <div class="card">
-                    <img src="https://images.pexels.com/photos/5489669/pexels-photo-5489669.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489669.jpg&fm=jpg" alt="" class="card-img-top">
+                    <img src="https://images.pexels.com/photos/5489669/pexels-photo-5489669.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489669.jpg&fm=jpg"
+                         alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Birudev Yele</h6>
                         <a href="https://www.facebook.com/biru.yele.10">

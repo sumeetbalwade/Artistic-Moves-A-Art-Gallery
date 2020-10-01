@@ -26,7 +26,8 @@
     />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/InfoPage.css"/>
     <title>Info Page</title>
-    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230"
+          type="image/x-icon">
 
 </head>
 <body>
