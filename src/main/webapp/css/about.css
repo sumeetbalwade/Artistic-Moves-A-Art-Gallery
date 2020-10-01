@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Lobster', cursive;
+    font-family: 'Noto Serif', serif;
+    background-color: black;
+}
+
+#main-container{
+    margin: 50px 100px;
+    padding: 20px 0;
+    border-radius: 40px;
+    background-color: white;
+
+}
+
+#brand-container{
+    margin: 10px 100px 0px 50px;
+    color: white;
+    border-radius: 40px;
+
+}
+
+#brand-container h1,#brand-container h4{
+    color: black;
+}
+
+#navbar-container{
+    color: white;
+    background-color: black;
+    margin: 20px 0px 5px 0px;
+}
+
+.navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+nav a{
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav a:hover{
+    background-color: white;
+    color: black;
+}
+
+#about-container{
+    margin: 50px;
+}
+
+
+#about-container p{
+    text-align: justify;
+}
+
+.card img{
+    max-height: 200px;
+}
+
+.card-body{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+
+
+#team{
+    text-align: center;
+}
+
+.card{
+    border: none;
+}
+
+.card i{
+    color: white;
+    margin: 5px 20px;
+}
+
+hr{
+    padding-bottom: 50px;
+    margin-left: 40%;
+    width: 20%;
+}
