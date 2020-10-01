@@ -45,14 +45,13 @@ public class OrderDAO {
         return status;
     }
 
-
     public static List<Product> getOrderedProduct(int userId) {
 
         List<Product> products = null;
         try {
             Class.forName(Database.driver);
             Connection connection = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
-            PreparedStatement preparedStatement = connection.prepareStatement("select  * from orders where user_id = ? group by order_id;");
+            PreparedStatement preparedStatement = connection.prepareStatement("select  * from orders where user_id = ? order by order_id desc ;");
             preparedStatement.setInt(1, userId);
             ResultSet resultSet = preparedStatement.executeQuery();
             List<Integer> productIdList = new ArrayList<>();

@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.ArtisticMoves.model.Product" %>
-<%@ page import="com.ArtisticMoves.DAO.ProductDAO" %><%--
+<%@ page import="com.ArtisticMoves.DAO.ProductDAO" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Sagar
   Date: 26-09-2020
@@ -19,10 +20,23 @@
 <body>
 <%
 
-    List<Product> productList = ProductDAO.getAllProduct();
-    if (productList == null) {
-        response.sendRedirect("index.jsp");
+    if (session.getAttribute("user") == null) {
+        response.sendRedirect("Login.jsp");
     } else {
+        List<Integer> CartProduct = (List<Integer>) session.getAttribute("cart");
+        if (CartProduct == null || CartProduct.size() == 0) {
+            response.sendRedirect("index.jsp");
+        } else {
+
+            List<Product> productList = new ArrayList<>();
+            for (int i : CartProduct) {
+                productList.add(ProductDAO.getProductFromId(i));
+            }
+
+
+            if (productList == null) {
+                response.sendRedirect("index.jsp");
+            } else {
 %>
 <nav class="navbar navbar-expand-lg nav-container ">
     <button class="navbar-toggler navbar-dark"
@@ -49,6 +63,18 @@
     </div>
 </nav>
 <div class="data-container">
+    <H1 class="heading" style="color: white">Your Cart</H1>
+    <% float totalPrice = 0;
+        for (Product p : productList) {
+            totalPrice = totalPrice + p.getPrice();
+        }
+    %>
+    <div class="row"
+         style="color: white;text-align: center;justify-content: center;margin: 1.5rem 0 2.5rem 0; align-items: center">
+        <h2 style="margin-right: 6vw">Total : <%=totalPrice%>
+        </h2>
+        <a href="PlaceCartOrderServlet" style="width: auto" class="btn btn-primary btn-lg m-2">Place Order</a>
+    </div>
     <div class="row">
         <% for (Product p : productList) {%>
         <div class="col-xl-4 col-md-12 my-4">
@@ -68,7 +94,13 @@
                         <%=p.getTitle()%>
                     </h3>
                     <div class="btn-row">
-                        <a href="ViewProductDetails.jsp?productId=<%=p.getId()%>" class="btn btn-primary m-2">View</a>
+                        <form action="RemoveFromCartServlet" method="post" style="display: inline">
+                            <input value="<%=p.getId()%>" hidden name="productId">
+                            <button type="submit" class="btn btn-primary m-2">Remove</button>
+                        </form>
+
+                        <a href="ViewProductDetails.jsp?productId=<%=p.getId()%>" style="display: inline"
+                           class="btn btn-primary m-2">View</a>
                     </div>
                 </div>
             </div>
@@ -77,7 +109,8 @@
     </div>
 </div>
 <%
-
+            }
+        }
     }
 %>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
