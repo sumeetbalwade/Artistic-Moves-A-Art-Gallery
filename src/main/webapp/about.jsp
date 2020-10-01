@@ -100,13 +100,13 @@
                     <img src="https://images.pexels.com/photos/5489445/pexels-photo-5489445.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489445.jpg&fm=jpg" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Sagar Mahajan</h6>
-                        <a href="">
+                        <a href="https://www.facebook.com/saggyy1918117">
                             <i class="fa fa-facebook-official" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/sagar_r_mahajan_/">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.linkedin.com/in/sagar-mahajan-b159a41a2/">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                         </a>
                     </div>
