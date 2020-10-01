@@ -40,16 +40,16 @@
                         <a class="nav-link" href="index.jsp">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Buy Arts</a>
+                        <a class="nav-link" href="ShowProduct.jsp">Buy Arts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">About</a>
+                        <a class="nav-link" href="about.jsp">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contact Us</a>
+                        <a class="nav-link" href="ContactUs.jsp">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Log In</a>
+                        <a class="nav-link" href="Login.jsp">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +80,7 @@
         <div class="row">
             <div class="col-md-3  col-xs-6">
                 <div class="card">
-                    <img src="/Home page/sagar.jpg" alt="" class="card-img-top">
+                    <img src="https://images.pexels.com/photos/5489404/pexels-photo-5489404.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489404.jpg&fm=jpg" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Sumeet Balwade</h6>
                         <a href="">
@@ -97,7 +97,7 @@
             </div>
             <div class="col-md-3  col-xs-6">
                 <div class="card">
-                    <img src="/Home page/sagar.jpg" alt="" class="card-img-top">
+                    <img src="https://images.pexels.com/photos/5489445/pexels-photo-5489445.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489445.jpg&fm=jpg" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Sagar Mahajan</h6>
                         <a href="">
