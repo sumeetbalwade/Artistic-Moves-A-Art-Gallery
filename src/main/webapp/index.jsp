@@ -110,13 +110,13 @@
             </div>
             <div class="col-md-4">
                 <h6 class="ml-3">Follow Us</h6>
-                <a href="">
+                <a href="https://www.facebook.com/">
                     <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i>
                 </a>
-                <a href="">
+                <a href="https://www.instagram.com/">
                     <i class="fa fa-lg fa-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="">
+                <a href="https://twitter.com/">
                     <i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i>
                 </a>
             </div>

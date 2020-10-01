@@ -97,7 +97,7 @@
                         </a>
                         <a href="LogOutServlet">
                             <div class="sidebar-card">
-                                <i class="fas fa-sign-out-alt"></i></i>Log Out
+                                <i class="fas fa-sign-out-alt"></i>Log Out
                             </div>
                         </a>
                     </div>
