@@ -17,6 +17,10 @@
 </head>
 <body>
 <%
+
+    if (session.getAttribute("user") == null) {
+        response.sendRedirect("Login.jsp");
+    } else {
     int id = Integer.parseInt(request.getParameter("productId"));
     //get product detail from product id
     Product p = ProductDAO.getProductFromId(id);
@@ -109,6 +113,7 @@
     </div>
 </section>
 <%
+    }
     }
 %>
 </body>
