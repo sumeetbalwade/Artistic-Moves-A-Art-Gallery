@@ -21,7 +21,8 @@
 
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserProfile.css"/>
-    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230"
+          type="image/x-icon">
 
     <title>Profile</title>
 </head>
@@ -97,7 +98,7 @@
                         </a>
                         <a href="LogOutServlet">
                             <div class="sidebar-card">
-                                <i class="fas fa-sign-out-alt"></i></i>Log Out
+                                <i class="fas fa-sign-out-alt"></i>Log Out
                             </div>
                         </a>
                     </div>
