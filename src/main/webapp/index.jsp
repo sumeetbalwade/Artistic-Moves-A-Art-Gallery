@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css"/>
-    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230"
+          type="image/x-icon">
 
 
 </head>
@@ -82,10 +83,10 @@
     <div id="middle-container">
         <p id="quote">If people only knew how hard I work to gain my mastery. It wouldn't seem so wonderful at all.</p>
     </div>
-<%
-    List<Product> products = (List<Product>) ProductDAO.getLatestProduct();
+    <%
+        List<Product> products = (List<Product>) ProductDAO.getLatestProduct();
 
-%>
+    %>
     <div id="images-container">
         <div class="row" style="align-items: center;">
             <% for (Product p : products) {%>

@@ -45,7 +45,6 @@ public class PlaceCartOrderServlet extends HttpServlet {
                         RequestDispatcher requestDispatcher = request.getRequestDispatcher("InfoPage.jsp");
                         requestDispatcher.forward(request, response);
                     }
-                    products.remove(new Integer(i));
                 }
 
                 products.clear();
@@ -54,14 +53,14 @@ public class PlaceCartOrderServlet extends HttpServlet {
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("InfoPage.jsp");
                 requestDispatcher.forward(request, response);
             }
-                        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-                        requestDispatcher.forward(request, response);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+            requestDispatcher.forward(request, response);
 
 
         } else {
 
-                        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Login.jsp");
-                        requestDispatcher.forward(request, response);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("Login.jsp");
+            requestDispatcher.forward(request, response);
         }
     }
 }
