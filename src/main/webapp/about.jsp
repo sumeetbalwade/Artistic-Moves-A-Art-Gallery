@@ -83,13 +83,13 @@
                     <img src="https://images.pexels.com/photos/5489404/pexels-photo-5489404.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489404.jpg&fm=jpg" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Sumeet Balwade</h6>
-                        <a href="">
+                        <a href="https://www.facebook.com/sumeet.balwade">
                             <i class="fa fa-facebook-official" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/sumeetbalwade/?hl=en">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.linkedin.com/in/sumeet-balwade-354738193/?originalSubdomain=in">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -100,13 +100,13 @@
                     <img src="https://images.pexels.com/photos/5489445/pexels-photo-5489445.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489445.jpg&fm=jpg" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Sagar Mahajan</h6>
-                        <a href="">
+                        <a href="https://www.facebook.com/saggyy1918117">
                             <i class="fa fa-facebook-official" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/sagar_r_mahajan_/">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.linkedin.com/in/sagar-mahajan-b159a41a2/">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -117,13 +117,13 @@
                     <img src="https://images.pexels.com/photos/5489692/pexels-photo-5489692.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Deepak Mali</h6>
-                        <a href="">
+                        <a href="https://www.facebook.com/deepak.m.mali.7/">
                             <i class="fa fa-facebook-official" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/deepakmalharimali/">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.linkedin.com/in/deepak-mali-324657177/">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -134,13 +134,13 @@
                     <img src="https://images.pexels.com/photos/5489669/pexels-photo-5489669.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489669.jpg&fm=jpg" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Birudev Yele</h6>
-                        <a href="">
+                        <a href="https://www.facebook.com/biru.yele.10">
                             <i class="fa fa-facebook-official" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/malharyodha_deva/?hl=en">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="">
+                        <a href="https://www.linkedin.com/in/birudev-yele-a26a3319b/">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                         </a>
 
