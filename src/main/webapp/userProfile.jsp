@@ -21,6 +21,8 @@
 
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserProfile.css"/>
+    <link rel="shortcut icon" href="https://www.linkpicture.com/view.php?img=LPic5f7570c13ea051507603230" type="image/x-icon">
+
     <title>Profile</title>
 </head>
 <body>
