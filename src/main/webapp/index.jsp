@@ -66,7 +66,7 @@
                     } else {
                     %>
                     <li class="nav-item">
-                        <a class="nav-link" href="UserOrder.jsp">Cart</a>
+                        <a class="nav-link" href="Cart.jsp">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="userProfile.jsp">Profile</a>
