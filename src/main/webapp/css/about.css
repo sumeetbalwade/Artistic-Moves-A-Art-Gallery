@@ -1,15 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Lobster', cursive;
     font-family: 'Noto Serif', serif;
     background-color: black;
 }
 
-#main-container{
+#main-container {
     margin: 50px 100px;
     padding: 20px 0;
     border-radius: 40px;
@@ -17,75 +17,74 @@ body{
 
 }
 
-#brand-container{
+#brand-container {
     margin: 10px 100px 0px 50px;
     color: white;
     border-radius: 40px;
 
 }
 
-#brand-container h1,#brand-container h4{
+#brand-container h1, #brand-container h4 {
     color: black;
 }
 
-#navbar-container{
+#navbar-container {
     color: white;
     background-color: black;
     margin: 20px 0px 5px 0px;
 }
 
-.navbar{
+.navbar {
     padding-top: 0;
     padding-bottom: 0;
 }
 
-nav a{
+nav a {
     text-transform: uppercase;
     color: white;
     font-size: 20px;
     font-weight: 600;
 }
 
-nav a:hover{
+nav a:hover {
     background-color: white;
     color: black;
 }
 
-#about-container{
+#about-container {
     margin: 50px;
 }
 
 
-#about-container p{
+#about-container p {
     text-align: justify;
 }
 
-.card img{
+.card img {
     max-height: 200px;
 }
 
-.card-body{
+.card-body {
     background-color: black;
     color: white;
     text-align: center;
 }
 
 
-
-#team{
+#team {
     text-align: center;
 }
 
-.card{
+.card {
     border: none;
 }
 
-.card i{
+.card i {
     color: white;
     margin: 5px 20px;
 }
 
-hr{
+hr {
     padding-bottom: 50px;
     margin-left: 40%;
     width: 20%;
