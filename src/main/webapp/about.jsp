@@ -114,7 +114,7 @@
             </div>
             <div class="col-md-3  col-xs-6">
                 <div class="card">
-                    <img src="/Home page/sagar.jpg" alt="" class="card-img-top">
+                    <img src="https://images.pexels.com/photos/5489692/pexels-photo-5489692.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Deepak Mali</h6>
                         <a href="">
@@ -131,7 +131,7 @@
             </div>
             <div class="col-md-3  col-xs-6">
                 <div class="card">
-                    <img src="/Home page/sagar.jpg" alt="" class="card-img-top">
+                    <img src="https://images.pexels.com/photos/5489669/pexels-photo-5489669.jpeg?cs=srgb&dl=pexels-sumeet-balwade-5489669.jpg&fm=jpg" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">Birudev Yele</h6>
                         <a href="">
