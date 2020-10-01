@@ -21,7 +21,7 @@
     List<Product> products = (List<Product>) ProductDAO.getLatestProduct();
 
 %>
-<section id="main-container">
+<section id="main-container" style="padding-bottom: 0px;">
     <div id="brand-container">
         <a href="index.jsp">
             <h1>ARTISTIC MOVES</h1><h4>A ART GALLERY</h4>
@@ -84,7 +84,7 @@
         <p id="quote">If people only knew how hard I work to gain my mastery. It wouldn't seem so wonderful at all.</p>
     </div>
     <div id="images-container">
-        <div class="row">
+        <div class="row" style="align-items: center;">
             <% for (Product p : products) {%>
             <div class=" col-md-4 col-xs-6">
                 <div class="media">
@@ -96,7 +96,7 @@
             <%}%>
         </div>
     </div>
-    <div id="footer-container">
+    <div id="footer-container" style="margin-bottom: 0px;">
         <div class="row">
             <div class="col-md-4">
                 <h3>ARTISTIC MOVES</h3><h5>A ART GALLERY</h5>

@@ -1,44 +1,44 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Lobster', cursive;
     font-family: 'Noto Serif', serif;
     background-color: black;
 }
 
-#main-container{
+#main-container {
     margin: 50px 100px;
-    padding: 20px 0;
     border-radius: 40px;
     background-color: white;
+    padding: 20px 0 0;
 
 }
 
-#brand-container{
+#brand-container {
     margin: 10px 10px 0px 30px;
     color: white;
     border-radius: 40px;
     font-family: 'Lobster', cursive;
 }
 
-#brand-container a{
+#brand-container a {
     text-decoration: none;
 }
 
-#brand-container h1,#brand-container h4{
+#brand-container h1, #brand-container h4 {
     color: black;
 }
 
-#navbar-container{
+#navbar-container {
     color: white;
     background-color: black;
     margin: 20px 0 0 0;
 }
 
-#middle-container{
+#middle-container {
     text-align: center;
     color: white;
     background-color: white;
@@ -48,37 +48,37 @@ body{
     font-size: 35px;
     background-image: url("https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     opacity: 0.9;
-    transition:all 1s;
+    transition: all 1s;
 }
 
-#middle-container p:hover{
+#middle-container p:hover {
     opacity: 1;
     color: white;
 }
 
-#images-container{
+#images-container {
     margin: 5px 10px;
 }
 
 
-.navbar{
+.navbar {
     padding-top: 0;
     padding-bottom: 0;
 }
 
-nav a{
+nav a {
     text-transform: uppercase;
     color: white;
     font-size: 20px;
     font-weight: 600;
 }
 
-nav a:hover{
+nav a:hover {
     background-color: white;
     color: black;
 }
 
-#images-container img{
+#images-container img {
     border-radius: 40px;
     padding: 10px 5px;
     width: auto;
@@ -86,26 +86,25 @@ nav a:hover{
 
 }
 
-#footer-container{
+#footer-container {
     margin-top: 50px;
-    margin-bottom: 50px;
     padding: 50px 50px;
     background-color: black;
     color: white;
 }
 
-#footer-container p{
+#footer-container p {
     font-size: 15px;
 }
 
-i{
+i {
     color: white;
     text-decoration: none;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-i:hover{
+i:hover {
     text-decoration: none;
 }
  
