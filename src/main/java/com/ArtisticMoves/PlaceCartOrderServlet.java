@@ -29,7 +29,8 @@ public class PlaceCartOrderServlet extends HttpServlet {
             List<Integer> products = (List<Integer>) session.getAttribute("cart");
             int orderId = OrderDAO.generateOrderId();
             if (products == null || products.size() == 0) {
-                response.sendRedirect("index.jsp");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                requestDispatcher.forward(request, response);
             } else {
                 Order order = new Order();
                 for (int i : products) {
@@ -53,10 +54,14 @@ public class PlaceCartOrderServlet extends HttpServlet {
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("InfoPage.jsp");
                 requestDispatcher.forward(request, response);
             }
-            response.sendRedirect("index.jsp");
+                        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                        requestDispatcher.forward(request, response);
+
 
         } else {
-            response.sendRedirect("Login.jsp");
+
+                        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Login.jsp");
+                        requestDispatcher.forward(request, response);
         }
     }
 }
