@@ -91,7 +91,7 @@ public class UserDAO {
         int status = 0;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("insert into users values (null,?,?,?,?,?,?,?,?,?,?,?);");
             ps.setString(1, user.getUserType());
@@ -198,7 +198,7 @@ public class UserDAO {
         int status = 0;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("update users set profilePicture=? where id=?");
             ps.setBlob(1, inputStream);
@@ -217,7 +217,7 @@ public class UserDAO {
     public static int deleteUser(int userId) {
         int status = 0;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Database.driver);
             Connection con = DriverManager.getConnection(Database.URL, Database.userName, Database.password);
             PreparedStatement ps = con.prepareStatement("delete from users where id = ?");
 
